@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 class ProductController extends Controller
 {
 
-    public function show(){
+    public function show_available(){
         $product = DB::select('SELECT * FROM products WHERE status_id = 1');
 
         echo json_encode(array(

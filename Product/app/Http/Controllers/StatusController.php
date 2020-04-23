@@ -23,4 +23,15 @@ class StatusController extends Controller
         ));
 
     }
+
+    public function update(Request $request){
+        $id = $request->input('id');
+        $name = $request->input('name');
+
+        $stmt = DB::table('statuses')
+        ->where('id', $id)
+        ->update([
+            'name' => $name
+        ]);
+    }
 }
