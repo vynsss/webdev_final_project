@@ -15,10 +15,10 @@ class Product extends Model
     ];
 
     public function category(){
-        return $this->belongsTo('Apps\Models\Category');
+        return $this->belongsTo('App\Category');
     }
 
     public function status(){
-        return $this->belongsTo('App\Models\Status');
+        return $this->belongsTo('App\Status');
     }
 }
