@@ -35,4 +35,16 @@ class CartController extends Controller
             "message" => "Successfully inserted data"
         ));
     }
+
+    public function update_staus(Request $request){
+        $id = $request->input('id');
+        $stmt= DB::update('UPDATE carts SET status_id = 2 WHERE id = :id', [
+            'id' => $id
+        ]);
+
+        echo json_encode(array(
+            'success' => true,
+            'message' => "product successfully went outside the cart"
+        ));
+    }
 }

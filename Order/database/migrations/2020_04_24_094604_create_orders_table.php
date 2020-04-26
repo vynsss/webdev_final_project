@@ -17,7 +17,7 @@ class CreateOrdersTable extends Migration
             $table->integerIncrements('id');
             $table->unsignedInteger('cart_id');
             $table->unsignedInteger('user_id');
-            $table->unsignedInteger('total_id');
+            $table->unsignedInteger('total__order_id');
             $table->timestamps();
 
             $table->foreign('cart_id')
@@ -25,10 +25,11 @@ class CreateOrdersTable extends Migration
                 ->on('carts')
                 ->onUpdate('cascade');
 
-            $table->foreign('total_id')
+            $table->foreign('total__order_id')
                 ->references('id')
                 ->on('total__orders')
-                ->onUpdate('cascade');
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
         });
     }
 

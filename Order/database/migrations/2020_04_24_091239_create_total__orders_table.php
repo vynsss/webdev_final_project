@@ -17,7 +17,7 @@ class CreateTotalOrdersTable extends Migration
             $table->integerIncrements('id');
             $table->unsignedInteger('user_id');
             $table->date('date');
-            $table->unsignedInteger('status_id');
+            $table->unsignedInteger('status_id')->default(1);
             $table->timestamps();
 
             $table->foreign('status_id')
