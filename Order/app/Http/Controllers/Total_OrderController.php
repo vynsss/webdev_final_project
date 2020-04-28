@@ -50,4 +50,28 @@ class Total_OrderController extends Controller
             'message' => 'total order successfully removed'
         ]);
     }
+
+    public function update_status(Request $request){
+        $id = $request->input('id');
+        $status = $request->input('status_id');
+        // $order = DB::select('SELECT cart_id FROM orders WHERE total__order_id = :id', [
+        //     'id' => $id
+        // ]);
+        // $stmt = DB::update('UPDATE carts SET status_id = :status_id WHERE id = (SELECT cart_id FROM orders WHERE total__order_id = :id))', [
+        //     'status_id' => $status
+        // ]);
+        $stmt2 = DB::update('UPDATE total__orders SET status_id = :status_id WHERE id = :id', [
+            'status_id' => $status,
+            'id' => $id
+        ]);
+
+        $stmt = DB::update('UPDATE carts, orders SET carts.status_id = :status_id WHERE orders.total__order_id = :id AND carts.id = orders.cart_id', [
+            'status_id' => $status,
+            'id' => $id
+        ]);
+        echo json_encode(array(
+            'success' => true,
+            'message' => 'status successfully updated'
+        ));
+    }
 }

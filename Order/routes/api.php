@@ -20,10 +20,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/carts', 'CartController@show');
+Route::get('/carts/all', 'CartController@show_all');
 Route::get('/statuses', 'StatusController@show');
 Route::get('/orders', 'OrderController@show');
-Route::get('/total_order', 'Total_OrderController@show_all');
-Route::get('/total_order/id', 'Total_OrderController@show_id');
+Route::get('/total_orders', 'Total_OrderController@show_all');
+Route::get('/total_orders/id', 'Total_OrderController@show_id');
 
 //carts
 Route::post('/carts/add', 'CartController@add');
@@ -39,3 +40,4 @@ Route::post('/orders/add', 'OrderController@add');
 //total order
 Route::post('/total_orders/add', 'Total_OrderController@add');
 Route::post('/total_orders/remove', 'Total_OrderController@remove');
+Route::put('/total_orders/update', 'Total_OrderController@update_status');

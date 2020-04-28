@@ -9,8 +9,16 @@ use Illuminate\Support\Facades\DB;
 
 class CartController extends Controller
 {
-    public function show(){
-        $stmt = Cart::All()->where('status_id', 1);
+    public function show_all(){
+        $stmt = Cart::All();
+        echo json_encode(array(
+            "cart" => $stmt
+        ));
+    }
+
+    public function show(Request $request){
+        $user = $request->input('user_id');
+        $stmt = Cart::All()->where('user_id', $user)->where('status_id', 1);
         echo json_encode(array(
             "cart" => $stmt
         ));
@@ -45,6 +53,16 @@ class CartController extends Controller
         echo json_encode(array(
             'success' => true,
             'message' => "product successfully went outside the cart"
+        ));
+    }
+
+    public function remove(Request $request){
+        $id = $request->input('id');
+        $stmt = Cart::find($id)->delete();
+
+        echo json_encode(array(
+            'success' => true,
+            'message' => 'cart successfully removed'
         ));
     }
 }

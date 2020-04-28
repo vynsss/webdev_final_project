@@ -8,8 +8,9 @@ use Illuminate\Support\Facades\DB;
 
 class OrderController extends Controller
 {
-    public function show(){
-        $stmt = Order::All();
+    public function show(Request $request){
+        $user = $request->input('user_id');
+        $stmt = Order::All()->where('user_id', $user);
         echo json_encode(array(
             'order' => $stmt
         ));
