@@ -36,3 +36,7 @@ Route::put('/categories/update', 'CategoryController@update');
 //status controller
 Route::post('/statuses/create', 'StatusController@insert');
 Route::put('/statuses/update', 'StatusController@update');
+
+Route::prefix('admin')->group(function(){
+
+});
