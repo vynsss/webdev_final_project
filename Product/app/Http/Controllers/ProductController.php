@@ -29,6 +29,7 @@ class ProductController extends Controller
         $name = $request->input('name');
         $price = $request->input('price');
         $description = $request->input('description');
+        $image = $request->input('image');
         $category = $request->input('category_id');
 
         $stmt = DB::table('Products')
@@ -36,6 +37,7 @@ class ProductController extends Controller
                 'name' => $name,
                 'price' => $price,
                 'description' => $description,
+                'image' => $image,
                 'category_id' => $category
                 ]);
 
