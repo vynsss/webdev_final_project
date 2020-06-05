@@ -27,6 +27,7 @@ Route::get('/statuses', 'StatusController@show');
 Route::get('/products/category', 'ProductController@show_category');//customer
 Route::post('/products/create', 'ProductController@insert');
 Route::put('/products/update', 'ProductController@update');
+Route::get('/products/pagination', 'ProductController@pagination');
 
 //category controller
 Route::post('/categories/create', 'CategoryController@insert');

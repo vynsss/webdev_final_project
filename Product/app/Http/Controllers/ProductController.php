@@ -31,6 +31,7 @@ class ProductController extends Controller
         $description = $request->input('description');
         $image = $request->input('image');
         $category = $request->input('category_id');
+        $status = $request->input('status_id');
 
         $stmt = DB::table('Products')
             ->insert([
@@ -38,7 +39,8 @@ class ProductController extends Controller
                 'price' => $price,
                 'description' => $description,
                 'image' => $image,
-                'category_id' => $category
+                'category_id' => $category,
+                'status_id' => $status
                 ]);
 
         echo json_encode(array(
@@ -61,6 +63,14 @@ class ProductController extends Controller
         echo json_encode(array(
             "success" => true,
             "message" => "Product updated!"
+        ));
+    }
+
+    public function pagination(){
+        $stmt = Product::paginate(20);
+        echo json_encode(array(
+            "success" => true,
+            "page" => $stmt
         ));
     }
 }
