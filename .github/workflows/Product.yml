@@ -37,7 +37,7 @@ jobs:
     runs-on: [ubuntu-latest]
     steps:
       - uses: action/checkout@v2
-        name: Build Docker Image
+      - name: Build Docker Image
         env:
           IMAGE_TAG: ${{ github.sha }}
         run: |
