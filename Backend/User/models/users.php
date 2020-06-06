@@ -80,6 +80,14 @@ class Users {
         return false;
     }
 
+    function random_string(){
+        
+    }
+
+    function log_out() {
+
+    }
+
     function update_password(){
         $stmt = $this->conn->prepare("UPDATE user SET password=:password WHERE id=:id");
 
