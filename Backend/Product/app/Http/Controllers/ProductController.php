@@ -13,7 +13,8 @@ class ProductController extends Controller
         $product = DB::select('SELECT * FROM products WHERE status_id = 1');
 
         echo json_encode(array(
-            "Product" => $product
+            "success" => true,
+            "product" => $product
         ));
     }
 

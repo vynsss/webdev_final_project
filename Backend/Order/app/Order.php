@@ -4,17 +4,15 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Cart extends Model
+class Order extends Model
 {
     protected $fillable = [
-        'product_id',
-        'quantity',
         'user_id',
         'date',
         'status_id'
     ];
 
-    public function status() {
-        return $this->belongsTo('App\Status');
+    public function cart(){
+        return $this->hasMany('App\Cart');
     }
 }
