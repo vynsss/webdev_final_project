@@ -7,6 +7,7 @@ class Users {
     public $l_name;
     public $email;
     public $password;
+    public $token;
     public $address;
 
     public $conn;
@@ -44,6 +45,18 @@ class Users {
         return false;
     }
 
+    function random_string(){
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'; 
+        $randomString = ''; 
+    
+        for ($i = 0; $i < 25; $i++) { 
+            $index = rand(0, strlen($characters) - 1); 
+            $randomString .= $characters[$index]; 
+        } 
+    
+        $this->token = $randomString; 
+    }
+
     function login() {
         if (!empty($this->username)) {
             $stmt = $this->conn->prepare("SELECT * FROM user WHERE username=:username LIMIT 1");
@@ -53,6 +66,9 @@ class Users {
             $stmt->bindParam(":username", $this->username);
 
             if($stmt->execute()) {
+                $insert_token = $this->conn->prepare("INSERT INTO user SET token=:token WHERE username=:username");
+                $insert_token->bindParam(":token", $this->token);
+
                 return $stmt;
             } else {
                 return false;
@@ -80,9 +96,7 @@ class Users {
         return false;
     }
 
-    function random_string(){
-        
-    }
+    
 
     function log_out() {
 
