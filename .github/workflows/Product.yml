@@ -4,7 +4,7 @@ on:
   push:
     branches: [ master ]
     paths: 
-      - 'Product/**'
+      - 'Backend/Product/**'
   pull_request:
     branches: [ master ]
 
@@ -32,13 +32,3 @@ jobs:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
       run: vendor/bin/phpunit
-  
-  build:
-    runs-on: [ubuntu-latest]
-    steps:
-      - uses: actions/checkout@v2
-      - name: Build Docker Image
-        env:
-          IMAGE_TAG: ${{ github.sha }}
-        run: |
-          docker build -t "$GITHUB_REPOSITORY:$IMAGE_TAG" .
