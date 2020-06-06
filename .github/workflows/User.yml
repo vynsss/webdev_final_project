@@ -3,7 +3,8 @@ name: User
 on:
   push:
     branches: [ master ]
-    paths: 'Backend/User/'
+    paths: 
+      - 'Backend/User/'
   pull_request:
     branches: [ master ]
 
