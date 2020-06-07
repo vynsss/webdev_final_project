@@ -74,4 +74,6 @@ class ProductController extends Controller
             "page" => $stmt
         ));
     }
+
+    // is need helpp,, somebody come and help meeT_T
 }
