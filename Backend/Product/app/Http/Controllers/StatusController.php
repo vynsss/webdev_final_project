@@ -15,7 +15,7 @@ class StatusController extends Controller
 
     public function insert(Request $request){
         $status = $request->input('name');
-        $stmt = DB::table('Statuses')->insert(['name'=>$status]);
+        $stmt = DB::table('statuses')->insert(['name'=>$status]);
 
         echo json_encode(array(
             "success" => $stmt,

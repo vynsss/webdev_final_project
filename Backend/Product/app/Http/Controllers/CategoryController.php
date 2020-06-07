@@ -15,7 +15,7 @@ class CategoryController extends Controller
 
     public function insert(Request $request){
         $category = $request->input('name');
-        $stmt = DB::table('Categories')->insert(['name'=>$category]);
+        $stmt = DB::table('categories')->insert(['name'=>$category]);
 
         echo json_encode(array(
             "success" => true,
@@ -38,7 +38,7 @@ class CategoryController extends Controller
         $id = $request->input('id');
         $name = $request->input('name');
 
-        $stmt = DB::table('category')
+        $stmt = DB::table('categories')
         ->where('id', $id)
         ->update([
             'name' => $name

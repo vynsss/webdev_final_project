@@ -15,7 +15,7 @@
 			<tr>
 
 		<?php
-			$contents_europeana = fopen("http://localhost:8000/api/products", "r");
+			$contents_europeana = fopen("https://product-service-fp.herokuapp.com/api/products", "r");
 			$json_europeana = stream_get_contents($contents_europeana);
 			fclose($contents_europeana);
 
@@ -54,7 +54,7 @@
 		var formdata = JSON.stringify($("#test").serializeArray());
 		$.ajax([
 			type: "POST",
-			url: "http://localhost:8000/api/products/create",
+			url: "https://product-service-fp.herokuapp.com/api/products/create",
 			data: formData,
 			success: function(response){
 				if(response){
