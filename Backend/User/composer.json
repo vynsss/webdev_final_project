@@ -1,0 +1,8 @@
+{
+    "name": "webdev final project",
+    "type": "project",
+    "require": {
+        "monolog/monolog": "1.0.*",
+        "php": "^7.2.5"
+    }
+}
