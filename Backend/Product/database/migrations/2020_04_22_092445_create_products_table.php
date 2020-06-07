@@ -20,7 +20,7 @@ class CreateProductsTable extends Migration
             $table->text('description');
             $table->string('image');
             $table->unsignedInteger('category_id');
-            $table->unsignedInteger('status_id');
+            $table->unsignedInteger('status_id')->default(1);
             $table->timestamps();
 
             $table->foreign('category_id')

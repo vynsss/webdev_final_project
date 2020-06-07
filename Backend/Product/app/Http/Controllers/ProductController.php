@@ -32,7 +32,7 @@ class ProductController extends Controller
         $description = $request->input('description');
         $image = $request->input('image');
         $category = $request->input('category_id');
-        $status = $request->input('status_id');
+        // $status = $request->input('status_id');
 
         $stmt = DB::table('Products')
             ->insert([
@@ -41,7 +41,7 @@ class ProductController extends Controller
                 'description' => $description,
                 'image' => $image,
                 'category_id' => $category,
-                'status_id' => $status
+                'status_id' => 1
                 ]);
 
         echo json_encode(array(
@@ -75,5 +75,5 @@ class ProductController extends Controller
         ));
     }
 
-    // is need helpp,, somebody come and help meeT_T
+    // is need helppT_T
 }

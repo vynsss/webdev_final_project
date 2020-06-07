@@ -20,7 +20,7 @@
 
 
 		$data_europeana = json_decode($json_europeana);
-		print $data_europeana->product[0]->name;
+		// print $data_europeana->product[0]->name;
 
 		foreach($data_europeana->product as $item) {
 			print '<tr>';
@@ -31,51 +31,35 @@
 			print '</tr>>';
 		}
 	?>	
-	</table>>
+	</table>
 
-	<script type="text/javascript">
-		
-		console.log("IS STRESSS");
-	</script>>
+	<form method="POST" name="test">
+		<label>Name:		</label><input type="text" name="name"><br>
+		<label>Description:	</label><input type="text" name="description"><br>
+		<label>Image:		</label><input type="textr" name="image"><br>
+		<label>Price:		</label><input type="number" name="price"><br>
+		<label>Category:	</label><input type="number" name="category_id"><br>
+		<input value="Submit" type="submit" onclick="submitform()">
+	</form>
 
 </body>
 
 
-<!-- <script>
-    let count = 0;
-    $(document).ready(function () {
-        $.ajax({
-            type: "GET",
-            dataType: "json",
-            url: "http://localhost:8000/api/products",
-            success: function (data) {
-                console.log(data);
-                $.each(data['product'], function (key, val) {
-                    $('#test').append(
-                        "<tr><td>" + val.Key + "</td><td>" + val.id + "</td><td>" + val.name + "</td></tr>" + val.description + "</td></tr>" + val.price + "</td></tr>"
-                    );
-                });
-            }
-        });
-    });
-</script> -->
-
-<!-- <script type="text/javascript">
-	fetch('http://localhost:8000/api/products').then(response=>{          
-		var data = response;                    
-		return data.json();  //Parsing the data into json
-	}).then(contents=>{
-		console.log("Iterating through the 'result' array of objects to be displayed in table");
-		_.forEach(contents.result,function(value,key){
-		tableHtml=tableHtml+'<tr>'+'<td>'+value.movie_names+'</td>'+'</tr>';
-  })
-</script>> -->
-
-<script type="text/javascript">
-	fetch('http://localhost:8000/api/products')
-		  .then(response => response.json())
-		  .then(data => console.log(data))
-
-</script>>
+<script>
+	function submitform() {
+		var formdata = JSON.stringify($("#test").serializeArray());
+		$.ajax([
+			type: "POST",
+			url: "http://localhost:8000/api/products/create",
+			data: formData,
+			success: function(response){
+				if(response){
+					window.location.href = "http://localhost/web_tutorial/fp/index.php";
+				}},
+			dataType: "json",
+			contentType : "application/json"
+		]);
+	}
+</script>
 
 </html>>
