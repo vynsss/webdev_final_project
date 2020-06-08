@@ -5,6 +5,7 @@ on:
     branches: [ master ]
     paths: 
       - 'Backend/Product/**'
+      - 'Backend/Product/artisan'
   pull_request:
     branches: [ master ]
 
