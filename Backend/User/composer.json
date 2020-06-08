@@ -1,5 +1,5 @@
 {
-    "name": "webdev final project",
+    "name": "php/user",
     "type": "project",
     "description": "user service",
     "require": {
