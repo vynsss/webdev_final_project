@@ -10,7 +10,8 @@ class Cart extends Model
         'product_id',
         'quantity',
         'user_id',
-        'order_id'
+        'order_id',
+        'status_id'
     ];
 
     public function order() {

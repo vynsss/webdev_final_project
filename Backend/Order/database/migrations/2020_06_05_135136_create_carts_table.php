@@ -19,11 +19,16 @@ class CreateCartsTable extends Migration
             $table->unsignedInteger('quantity');
             $table->unsignedInteger('user_id');
             $table->unsignedInteger('order_id');
+            $table->unsignedInteger('status_id')->default(1);
             $table->timestamps();
 
             $table->foreign('order_id')
                 ->references('id')
                 ->on('orders')
+                ->onUpdate('cascade');
+            $table->foreign('status_id')
+                ->references('id')
+                ->on('statuses')
                 ->onUpdate('cascade');
         });
     }
