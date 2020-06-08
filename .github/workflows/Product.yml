@@ -3,8 +3,8 @@ name: Product
 on:
   push:
     branches: [ master ]
-    paths: 
-      - 'Backend/Product/'
+#     paths: 
+#       - 'Backend/Product/'
   pull_request:
     branches: [ master ]
 
@@ -15,6 +15,8 @@ jobs:
     
     steps:
     - uses: actions/checkout@v2
+    - name: directory path
+      uses: ./.github/Backend/Product
     - name: Copy .env
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
     - name: Install Dependencies
