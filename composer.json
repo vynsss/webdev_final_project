@@ -1,5 +1,9 @@
 {
-    "name": "webdev final project",
+    "name": "php/user",
     "type": "project",
-    "description": "webdevvvv"
+    "description": "user service",
+    "require": {
+        "php": "^7.2.5",
+        "monolog/monolog": "1.0.*"
+    }
 }
