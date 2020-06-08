@@ -34,7 +34,7 @@ class ProductController extends Controller
         $category = $request->input('category_id');
         // $status = $request->input('status_id');
 
-        $stmt = DB::table('Products')
+        $stmt = DB::table('products')
             ->insert([
                 'name' => $name,
                 'price' => $price,
