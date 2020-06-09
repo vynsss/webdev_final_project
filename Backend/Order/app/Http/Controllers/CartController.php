@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Cart;
+use App\Order;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -28,14 +29,15 @@ class CartController extends Controller
         $product = $request->input('product_id');
         $qty = $request->input('quantity');
         $user = $request->input('user_id');
-        $date = Carbon::now()->toDateString();
+        $order= DB::table('orders')->where('user_id', $user)->where('status_id', 1)->first();
+        $order_id = $order->id;
 
         $stmt = DB::table('carts')
             ->insert([
                 'product_id' => $product,
                 'quantity' => $qty,
                 'user_id' => $user,
-                'date' => $date,
+                'order_id' => $order_id,
                 ]);
 
         echo json_encode(array(
@@ -56,6 +58,7 @@ class CartController extends Controller
         ));
     }
 
+    //i think this is not necessary
     public function remove(Request $request){
         $id = $request->input('id');
         $stmt = Cart::find($id)->delete();
