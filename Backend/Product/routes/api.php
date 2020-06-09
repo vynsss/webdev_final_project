@@ -25,19 +25,22 @@ Route::get('/statuses', 'StatusController@show');
 
 //product controller
 Route::get('/products/category', 'ProductController@show_category');//customer
-Route::post('/products/create', 'ProductController@insert');
-Route::put('/products/update', 'ProductController@update');
 Route::get('/products/pagination', 'ProductController@pagination');
-
-//category controller
-Route::post('/categories/create', 'CategoryController@insert');
-Route::delete('/categories/delete', 'CategoryController@delete');
-Route::put('/categories/update', 'CategoryController@update');
 
 //status controller
 Route::post('/statuses/create', 'StatusController@insert');
 Route::put('/statuses/update', 'StatusController@update');
 
-Route::prefix('admin')->group(function(){
+Route::prefix('/admin')->group(function(){
+    Route::post('/products/create', 'ProductController@insert');
+    Route::put('/products/update', 'ProductController@update');
 
+    //category controller
+    Route::post('/categories/create', 'CategoryController@insert');
+    Route::delete('/categories/delete', 'CategoryController@delete');   //might delete
+    Route::put('/categories/update', 'CategoryController@update');
+
+    //status controller
+    Route::post('/statuses/create', 'StatusController@insert');
+    Route::put('/statuses/update', 'StatusController@update');
 });

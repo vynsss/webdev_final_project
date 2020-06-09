@@ -20,7 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/carts', 'CartController@show');
-Route::get('/carts/all', 'CartController@show_all');
+Route::get('/carts/all', 'CartController@show_all');    //to check only might 
 Route::get('/statuses', 'StatusController@show');
 Route::get('/orders', 'OrderController@show');
 
@@ -28,10 +28,12 @@ Route::get('/orders', 'OrderController@show');
 Route::post('/carts/add', 'CartController@add');
 Route::put('/carts/update', 'CartController@update_status');
 
-//status
-Route::post('/statuses/add', 'StatusController@add');
-Route::put('/statuses/update', 'StatusController@update');
 
 //order
 Route::post('/orders/add', 'OrderController@add');
 
+Route::prefix('/admin')->group(function(){
+    //status
+    Route::post('/statuses/add', 'StatusController@add');
+    Route::put('/statuses/update', 'StatusController@update');
+});
