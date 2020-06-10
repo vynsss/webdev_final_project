@@ -1,5 +1,5 @@
 <?php
-    include 'include/navbar.html';
+    include 'include/navbar.php';
 ?>
 
     <div class="site-blocks-cover inner-page-cover overlay" style="background-image: url('images/balitemple.jpg');"
@@ -230,5 +230,5 @@
 </div>
 
 <?php
-    include 'include/footer.html';
+    include 'include/footer.php';
 ?>

@@ -1,5 +1,5 @@
 <?php
-        include 'include/navbar.html';
+        include 'include/navbar.php';
 ?>
 
     <div class="site-blocks-cover inner-page-cover overlay" style="background-image: url('images/balifurniture.jpeg');"
@@ -29,10 +29,10 @@
 
                     foreach($data_europeana->product as $item) {
                         print '<div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="100">';
-                        print '<a href="about_us.html"><img src="images/'.$item->image.'" alt="Image" class="img-fluid"></a>';
+                        print '<a href="about_us.php"><img src="images/'.$item->image.'" alt="Image" class="img-fluid"></a>';
                         print '<div class="p-4 bg-white">';
                         print '<span class="d-block text-secondary small text-uppercase">Rp'. $item->price .'</span>';
-                        print '<h2 class="h5 text-black mb-3"><a href="about_us.html">'. $item->name .'</a></h2>';
+                        print '<h2 class="h5 text-black mb-3"><a href="about_us.php">'. $item->name .'</a></h2>';
                         print '</div>';
                         print '</div>';
                     }
@@ -62,5 +62,5 @@
 </div>
 
 <?php
-        include 'include/footer.html';
+        include 'include/footer.php';
 ?>

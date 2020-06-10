@@ -1,5 +1,5 @@
 <?php
-    include 'include/navbar.html';
+    include 'include/navbar.php';
 ?>
 
     <div class="site-blocks-cover inner-page-cover overlay" style="background-image: url('images/balipantai.jpg');"
@@ -24,7 +24,7 @@
         </div>
       </div>
       <div class="row" >
-        <a href="home_wares.html"><div class="col-md-6 col-lg-4 mb-5 mb-lg-5" >
+        <a href="home_wares.php"><div class="col-md-6 col-lg-4 mb-5 mb-lg-5" >
           <div class="team-member">
 
             <img src="images/person_1.jpg" alt="Image" class="img-fluid" >
@@ -45,7 +45,7 @@
         </div>
         </a>
 
-        <a href="soft_furniture.html"><div class="col-md-6 col-lg-4 mb-5 mb-lg-5">
+        <a href="soft_furniture.php"><div class="col-md-6 col-lg-4 mb-5 mb-lg-5">
           <div class="team-member">
   
             <img src="images/person_2.jpg" alt="Image" class="img-fluid">
@@ -66,7 +66,7 @@
         </div>
         </a>
 
-        <a href="tableware.html"><div class="col-md-6 col-lg-4 mb-5 mb-lg-5">
+        <a href="tableware.php"><div class="col-md-6 col-lg-4 mb-5 mb-lg-5">
           <div class="team-member">
   
             <img src="images/person_3.jpg" alt="Image" class="img-fluid">
@@ -87,7 +87,7 @@
         </div>
         </a>
 
-        <a href="home_furniture.html"><div class="col-md-6 col-lg-4 mb-5 mb-lg-5">
+        <a href="home_furniture.php"><div class="col-md-6 col-lg-4 mb-5 mb-lg-5">
           <div class="team-member">
   
             <img src="images/person_4.jpg" alt="Image" class="img-fluid">
@@ -108,7 +108,7 @@
         </div>
         </a>
 
-        <a href="fashion.html"><div class="col-md-6 col-lg-4 mb-5 mb-lg-5">
+        <a href="fashion.php"><div class="col-md-6 col-lg-4 mb-5 mb-lg-5">
           <div class="team-member">
   
             <img src="images/person_1.jpg" alt="Image" class="img-fluid">
@@ -129,7 +129,7 @@
         </div>
         </a>
 
-        <a href="clothing.html"><div class="col-md-6 col-lg-4 mb-5 mb-lg-5">
+        <a href="clothing.php"><div class="col-md-6 col-lg-4 mb-5 mb-lg-5">
           <div class="team-member">
   
             <img src="images/person_2.jpg" alt="Image" class="img-fluid">
@@ -152,21 +152,6 @@
     </div>
   </div>
 
-    
-    
-    <div class="bg-primary" data-aos="fade">
-      <div class="container">
-        <div class="row">
-          <a href="#" class="col-2 text-center py-4 social-icon d-block"><span class="icon-facebook text-white"></span></a>
-          <a href="#" class="col-2 text-center py-4 social-icon d-block"><span class="icon-twitter text-white"></span></a>
-          <a href="#" class="col-2 text-center py-4 social-icon d-block"><span class="icon-instagram text-white"></span></a>
-          <a href="#" class="col-2 text-center py-4 social-icon d-block"><span class="icon-linkedin text-white"></span></a>
-          <a href="#" class="col-2 text-center py-4 social-icon d-block"><span class="icon-pinterest text-white"></span></a>
-          <a href="#" class="col-2 text-center py-4 social-icon d-block"><span class="icon-youtube text-white"></span></a>
-        </div>
-      </div>
-    </div>
-
 <?php
-    include 'include/footer.html';
+    include 'include/footer.php';
 ?>

@@ -1,5 +1,5 @@
 <?php
-    include 'include/navbar.html';
+    include 'include/navbar.php';
 ?>
 
     
@@ -241,63 +241,50 @@
         </div>
         <div class="row">
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
-            <a href="about_us.html"><img src="images/img_4.jpg" alt="Image" class="img-fluid"></a>
+            <a href="about_us.php"><img src="images/img_4.jpg" alt="Image" class="img-fluid"></a>
             <div class="p-4 bg-white">
               <span class="d-block text-secondary small text-uppercase">Jan 20th, 2019</span>
-              <h2 class="h5 text-black mb-3"><a href="about_us.html">About Us</a></h2>
+              <h2 class="h5 text-black mb-3"><a href="about_us.php">About Us</a></h2>
               
             </div>
           </div>
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-0" data-aos="fade-up" data-aos-delay="200">
-            <a href="testimonial.html"><img src="images/img_2.jpg" alt="Image" class="img-fluid"></a>
+            <a href="testimonial.php"><img src="images/img_2.jpg" alt="Image" class="img-fluid"></a>
             <div class="p-4 bg-white">
               <span class="d-block text-secondary small text-uppercase">Jan 20th, 2019</span>
-              <h2 class="h5 text-black mb-3"><a href="testimonial.html">Testimonials</a></h2>
+              <h2 class="h5 text-black mb-3"><a href="testimonial.php">Testimonials</a></h2>
               
             </div>
           </div>
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-0" data-aos="fade-up" data-aos-delay="300">
-            <a href="customer.html"><img src="images/img_3.jpg" alt="Image" class="img-fluid"></a>
+            <a href="customer.php"><img src="images/img_3.jpg" alt="Image" class="img-fluid"></a>
             <div class="p-4 bg-white">
               <span class="d-block text-secondary small text-uppercase">Jan 20th, 2019</span>
-              <h2 class="h5 text-black mb-3"><a href="customer.html">Our Customers</a></h2>
+              <h2 class="h5 text-black mb-3"><a href="customer.php">Our Customers</a></h2>
               
             </div>
           </div>
 
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
-            <a href="team.html"><img src="images/img_4.jpg" alt="Image" class="img-fluid"></a>
+            <a href="team.php"><img src="images/img_4.jpg" alt="Image" class="img-fluid"></a>
             <div class="p-4 bg-white">
               <span class="d-block text-secondary small text-uppercase">Jan 20th, 2019</span>
-              <h2 class="h5 text-black mb-3"><a href="team.html">Our Team</a></h2>
+              <h2 class="h5 text-black mb-3"><a href="team.php">Our Team</a></h2>
 
             </div>
           </div>
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
-            <a href="contact.html"><img src="images/img_4.jpg" alt="Image" class="img-fluid"></a>
+            <a href="contact.php"><img src="images/img_4.jpg" alt="Image" class="img-fluid"></a>
             <div class="p-4 bg-white">
               <span class="d-block text-secondary small text-uppercase">Jan 20th, 2019</span>
-              <h2 class="h5 text-black mb-3"><a href="contact.html">Contact Us</a></h2>
+              <h2 class="h5 text-black mb-3"><a href="contact.php">Contact Us</a></h2>
 
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="bg-primary" data-aos="fade">
-      <div class="container">
-        <div class="row">
-          <a href="#" class="col-2 text-center py-4 social-icon d-block"><span class="icon-facebook text-white"></span></a>
-          <a href="#" class="col-2 text-center py-4 social-icon d-block"><span class="icon-twitter text-white"></span></a>
-          <a href="#" class="col-2 text-center py-4 social-icon d-block"><span class="icon-instagram text-white"></span></a>
-          <a href="#" class="col-2 text-center py-4 social-icon d-block"><span class="icon-linkedin text-white"></span></a>
-          <a href="#" class="col-2 text-center py-4 social-icon d-block"><span class="icon-pinterest text-white"></span></a>
-          <a href="#" class="col-2 text-center py-4 social-icon d-block"><span class="icon-youtube text-white"></span></a>
         </div>
       </div>
     </div>
 
 <?php
-    include 'include/footer.html';
+    include 'include/footer.php';
 ?>

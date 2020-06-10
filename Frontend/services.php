@@ -1,5 +1,5 @@
 <?php
-    include 'include/navbar.html';
+    include 'include/navbar.php';
 ?>
     
     <div class="site-blocks-cover inner-page-cover overlay" style="background-image: url('images/balipool.png');"
@@ -28,7 +28,7 @@
         <div class="row">
 
           <div class="col-md-6 col-lg-3 mb-5" data-aos="fade-up" data-aos-delay="100">
-            <a href="private_label.html" class="unit-9">
+            <a href="private_label.php" class="unit-9">
               <div class="image" style="background-image: url('images/img_1.jpg');"></div>
               <div class="unit-9-content">
                 <h2>Private Label</h2>
@@ -39,7 +39,7 @@
           </div>
 
           <div class="col-md-6 col-lg-3 mb-5" data-aos="fade-up" data-aos-delay="200">
-            <a href="interior_solution.html" class="unit-9">
+            <a href="interior_solution.php" class="unit-9">
               <div class="image" style="background-image: url('images/img_2.jpg');"></div>
               <div class="unit-9-content">
                 <h2>Interior Solutions</h2>
@@ -48,7 +48,7 @@
             </a>
           </div>
           <div class="col-md-6 col-lg-3 mb-5" data-aos="fade-up" data-aos-delay="300">
-            <a href="corporate_meeting.html" class="unit-9">
+            <a href="corporate_meeting.php" class="unit-9">
               <div class="image" style="background-image: url('images/img_3.jpg');"></div>
               <div class="unit-9-content">
                 <h2>Meetings & Events</h2>
@@ -57,7 +57,7 @@
             </a>
           </div>
           <div class="col-md-6 col-lg-3 mb-5" data-aos="fade-up" data-aos-delay="400">
-            <a href="custom_made.html" class="unit-9">
+            <a href="custom_made.php" class="unit-9">
               <div class="image" style="background-image: url('images/img_4.jpg');"></div>
               <div class="unit-9-content">
                 <h2>Custom Made & Designs</h2>
@@ -68,7 +68,7 @@
 
 
           <div class="col-md-6 col-lg-3 mb-5" data-aos="fade-up" data-aos-delay="100">
-            <a href="exports_quality.html" class="unit-9">
+            <a href="exports_quality.php" class="unit-9">
               <div class="image" style="background-image: url('images/img_1.jpg');"></div>
               <div class="unit-9-content">
                 <h2>Exports & Quality Control</h2>
@@ -79,7 +79,7 @@
           </div>
 
           <div class="col-md-6 col-lg-3 mb-5" data-aos="fade-up" data-aos-delay="200">
-            <a href="wholesale_sourcing.html" class="unit-9">
+            <a href="wholesale_sourcing.php" class="unit-9">
               <div class="image" style="background-image: url('images/img_2.jpg');"></div>
               <div class="unit-9-content">
                 <h2>Wholesale Sourcing Tour</h2>
@@ -88,7 +88,7 @@
             </a>
           </div>
           <div class="col-md-6 col-lg-3 mb-5" data-aos="fade-up" data-aos-delay="300">
-            <a href="service_fee.html" class="unit-9">
+            <a href="service_fee.php" class="unit-9">
               <div class="image" style="background-image: url('images/img_3.jpg');"></div>
               <div class="unit-9-content">
                 <h2>Services fee</h2>
@@ -97,7 +97,7 @@
             </a>
           </div>
           <div class="col-md-6 col-lg-3 mb-5" data-aos="fade-up" data-aos-delay="400">
-            <a href="terms.html" class="unit-9">
+            <a href="terms.php" class="unit-9">
               <div class="image" style="background-image: url('images/img_4.jpg');"></div>
               <div class="unit-9-content">
                 <h2>Terms</h2>
@@ -111,20 +111,7 @@
       </div>
     </div>
     
-    
-    <div class="bg-primary" data-aos="fade">
-      <div class="container">
-        <div class="row">
-          <a href="#" class="col-2 text-center py-4 social-icon d-block"><span class="icon-facebook text-white"></span></a>
-          <a href="#" class="col-2 text-center py-4 social-icon d-block"><span class="icon-twitter text-white"></span></a>
-          <a href="#" class="col-2 text-center py-4 social-icon d-block"><span class="icon-instagram text-white"></span></a>
-          <a href="#" class="col-2 text-center py-4 social-icon d-block"><span class="icon-linkedin text-white"></span></a>
-          <a href="#" class="col-2 text-center py-4 social-icon d-block"><span class="icon-pinterest text-white"></span></a>
-          <a href="#" class="col-2 text-center py-4 social-icon d-block"><span class="icon-youtube text-white"></span></a>
-        </div>
-      </div>
-    </div>
 
 <?php
-    include 'include/footer.html';
+    include 'include/footer.php';
 ?>
