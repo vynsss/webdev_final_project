@@ -25,7 +25,7 @@
             <li>Email: <strong>bali_products@gmail.com</strong></li>
             <li>location: <strong>Jl. Raya Pantai Berawa Gg Bisma No. 1  Canggu, Bali, Indonesia</strong></li>
           </ul>
-          <p><a href="about_us.html" class="btn btn-primary px-4 py-3">Learn More</a></p>
+          <p><a href="about_us.php" class="btn btn-primary px-4 py-3">Learn More</a></p>
         </div>
       </div>
     </div>
@@ -40,7 +40,7 @@
         </div>
         <div class="row">
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-            <a href="home_wares.html" class="unit-9">
+            <a href="home_wares.php" class="unit-9">
               <div class="image" style="background-image: url('images/img_1.jpg');"></div>
               <div class="unit-9-content">
                 <h2>Home Ware</h2>
@@ -51,7 +51,7 @@
           </div>
 
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-            <a href="soft_furniture.html" class="unit-9">
+            <a href="soft_furniture.php" class="unit-9">
               <div class="image" style="background-image: url('images/img_2.jpg');"></div>
               <div class="unit-9-content">
                 <h2>Soft Furniture</h2>
@@ -60,7 +60,7 @@
             </a>
           </div>
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
-            <a href="tableware.html" class="unit-9">
+            <a href="tableware.php" class="unit-9">
               <div class="image" style="background-image: url('images/img_3.jpg');"></div>
               <div class="unit-9-content">
                 <h2>Tableware</h2>
@@ -69,7 +69,7 @@
             </a>
           </div>
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
-            <a href="fashion.html" class="unit-9">
+            <a href="fashion.php" class="unit-9">
               <div class="image" style="background-image: url('images/img_4.jpg');"></div>
               <div class="unit-9-content">
                 <h2>Fashion</h2>
@@ -78,7 +78,7 @@
             </a>
           </div>
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
-            <a href="home_furniture.html" class="unit-9">
+            <a href="home_furniture.php" class="unit-9">
               <div class="image" style="background-image: url('images/img_4.jpg');"></div>
               <div class="unit-9-content">
                 <h2>Home Furniture</h2>
@@ -87,7 +87,7 @@
             </a>
           </div>
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
-            <a href="fashion.html" class="unit-9">
+            <a href="fashion.php" class="unit-9">
               <div class="image" style="background-image: url('images/img_4.jpg');"></div>
               <div class="unit-9-content">
                 <h2>Kaftan, Kimono & Coverup</h2>
@@ -298,75 +298,6 @@
       </div>
     </div>
 
-    <footer class="site-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="mb-5">
-              <h3 class="footer-heading mb-4">About Us</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe pariatur reprehenderit vero atque, consequatur id ratione, et non dignissimos culpa? Ut veritatis, quos illum totam quis blanditiis, minima minus odio!</p>
-              <ul class="property-list-details mb-5">
-                <li>Phone: <strong class="text-black">+62 813 3905 0050</strong></li>
-                <li>Email: <strong>bali_products@gmail.com</strong></li>
-                <li>location: <strong>Jl. Raya Pantai Berawa Gg Bisma No. 1  Canggu, Bali, Indonesia</strong></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-6 mb-5 mb-lg-0">
-            <div class="row mb-5">
-              <div class="col-md-12">
-                <h3 class="footer-heading mb-4">Navigations</h3>
-              </div>
-              <div class="col-md-6 col-lg-6">
-                <ul class="list-unstyled">
-                  <li><a href="home.html">Home</a></li>
-                  <li><a href="shop.html">Shop</a></li>
-                  <li><a href="services.html">Services</a></li>
-                </ul>
-              </div>
-              <div class="col-md-6 col-lg-6">
-                <ul class="list-unstyled">
-                  <li><a href="blog.html">Blog</a></li>
-                  <li><a href="about_us.html">About</a></li>
-                  <li><a href="contact.html">Contact Us</a></li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-12">
-                <h3 class="footer-heading mb-4">Follow Us</h3>
-
-                <div>
-                  <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
-                  <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
-                  <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
-                  <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-  </div>
-
-  <script src="js/jquery-3.3.1.min.js"></script>
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/jquery-ui.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/mediaelement-and-player.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/jquery.countdown.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/bootstrap-datepicker.min.js"></script>
-  <script src="js/aos.js"></script>
-  <script src="js/circleaudioplayer.js"></script>
-
-  <script src="js/main.js"></script>
-    
-  </body>
-</html>
+<?php
+    include 'include/footer.html';
+?>

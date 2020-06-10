@@ -36,7 +36,8 @@
 	</div>
 
 	<div>
-		<form method="POST" name="test">
+		<iframe name="hiddenFrame" width="0" height="0" border="0" style="display: none;"></iframe>
+		<form action="https://product-service-fp.herokuapp.com/api/products/create" method="POST" name="test" target="hiddenFrame" onsubmit="window.location.reload()">
 			<label>Name:		</label><input type="text" name="name"><br>
 			<label>Description:	</label><input type="text" name="description"><br>
 			<label>Image:		</label><input type="textr" name="image"><br>
@@ -49,21 +50,18 @@
 </body>
 
 
-<script>
+<!-- <script>
 	function submitform() {
 		var formdata = JSON.stringify($("#test").serializeArray());
 		$.ajax([
 			type: "POST",
 			url: "https://product-service-fp.herokuapp.com/api/products/create",
-			data: formData,
-			success: function(response){
-				if(response){
-					window.location.href = "http://localhost/web_tutorial/fp/index.php";
-				}},
+			data: $('#test').serialize(),
+			success: function(response){},
 			dataType: "json",
 			contentType : "application/json"
 		]);
 	}
-</script>
+</script> -->
 
-</html>>
+</html>
