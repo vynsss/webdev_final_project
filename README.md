@@ -1,3 +1,20 @@
-# WebDev_Final_Project
+# WebDev_Final_Project: BaliBebek
+This is for Website Development Final Project
 
-<p>Hello, testing</p>
+## Team Member and Contribution
+Brenda Spears   : Design and modify the Frontend of this website<br>
+Jennifer Ihdata : Database design, initial idea for project, help with the Frontend<br>
+Vicky Vanessa   : Making the Backend<br>
+
+## About
+Frontend  : Using free downloadable template, bootstrap and jquery<br>
+Backend   : Using Laravel framework to make the APIs<br>
+Hosting   : 
+  - Web Hosting: Heroku
+  - Database: AWS
+  
+## Services
+This website has 3 services:
+  - User service
+  - Product service
+  - Order service
