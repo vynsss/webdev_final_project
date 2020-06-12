@@ -1,6 +1,6 @@
 # User Service
 ### Continuous Integration
-Github action workflow for Laravel
+Github action Jekyll site CI
 
 ## APIs
 ### Customer
