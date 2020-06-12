@@ -9,13 +9,6 @@ Vicky Vanessa   : Making the Backend<br>
 ## About
 Frontend  : Using free downloadable template, bootstrap and jquery<br>
 Backend   : Using Laravel framework to make the APIs<br>
-CI/CD     : Github Action Workflow
 Hosting   : 
   - Web Hosting: Heroku
-  - Database: AWS
-  
-## Services
-This website has 3 services:
-  - User service
-  - Product service
-  - Order service
+  - Database: AWS RDS MySQL
