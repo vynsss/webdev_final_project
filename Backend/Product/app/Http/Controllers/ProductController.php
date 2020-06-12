@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
 
 class ProductController extends Controller
 {
@@ -18,9 +19,20 @@ class ProductController extends Controller
         ));
     }
 
+    // public function test(Request $request){
+    //     return redirect('http://localhost/web_tutorial/fp/index.php')->with(['id' => $request->id]);
+    // }
+
+    public function show_individual(Request $request){
+        $stmt = DB::select('SELECT * from products WHERE id=:id', [
+            'id' => $request->id
+        ]);
+        echo json_encode(array("success" => true, "result" => $stmt));
+    }
+
     public function show_category(Request $request){
         $stmt = DB::select('SELECT * FROM products WHERE status_id = 1 AND category_id = :id', [
-            'id' => $request->id
+            'id' => $request->category_id
         ]);
 
         echo json_encode(array("success" => true, "result" => $stmt));

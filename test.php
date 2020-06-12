@@ -14,24 +14,24 @@
 				<th>decription</th>
 			<tr>
 
-		<?php
-			$contents_europeana = fopen("https://product-service-fp.herokuapp.com/api/products", "r");
-			$json_europeana = stream_get_contents($contents_europeana);
-			fclose($contents_europeana);
+			<?php
+				$contents_europeana = fopen("https://product-service-fp.herokuapp.com/api/products", "r");
+				$json_europeana = stream_get_contents($contents_europeana);
+				fclose($contents_europeana);
 
 
-			$data_europeana = json_decode($json_europeana);
-			// print $data_europeana->product[0]->name;
+				$data_europeana = json_decode($json_europeana);
+				// print $data_europeana->product[0]->name;
 
-			foreach($data_europeana->product as $item) {
-				print '<tr>';
-				print '<td>'.$item->id.'</td>';
-				print '<td>'.$item->name.'</td>';
-				print '<td>'.$item->price.'</td>';
-				print '<td>'.$item->description.'</td>';
-				print '</tr>>';
-			}
-		?>	
+				foreach($data_europeana->product as $item) {
+					print '<tr>';
+					print '<td>'.$item->id.'</td>';
+					print '<td>'.$item->name.'</td>';
+					print '<td>'.$item->price.'</td>';
+					print '<td>'.$item->description.'</td>';
+					print '</tr>>';
+				}
+			?>	
 		</table>
 	</div>
 
@@ -47,6 +47,9 @@
 		</form>
 	</div>
 
+	<p>check console log plss</p>
+
+	<?php echo $_COOKIE["id"]?>
 </body>
 
 
@@ -63,5 +66,55 @@
 		]);
 	}
 </script> -->
+
+<script>
+// var url = new URL('http://localhost:8000/api/product')
+
+// var params = {id:1} // or:
+
+// url.search = new URLSearchParams(params).toString();
+// 	fetch(url)
+// 	.then(data => data.text())
+// 	.then((text) => {
+// 		console.log('request succeeded with JSON response', text)
+// 		var data = JSON.parse(text)
+// 		var success = data.success
+// 		var id = data.result[0].id
+// 		if (success == true){
+// 			var d = new Date();
+// 			d.setTime(d.getTime() + (24*3600));
+// 			var expires = "expires="+ d.toUTCString();
+// 			document.cookie = "id" + "=" + id + ";" + expires + ";path=/";
+// 			console.log("successful?")
+// 		}
+// 	}).catch(function (error) {
+// 		console.log('request failed', error)
+// 	});
+
+
+var url = new URL('http://localhost/web_tutorial/fp/backend/user/api/login.php')
+
+var params = {username: "vynsss", password: "123456"} // or:
+
+url.search = new URLSearchParams(params).toString();
+	fetch(url)
+	.then(data => data.text())
+	.then((text) => {
+		console.log('request succeeded with JSON response', text)
+		var data = JSON.parse(text)
+		var success = data.success;
+		var id = data.session.id;
+		// console.log(id)
+		if (success == true){
+			var d = new Date();
+			d.setTime(d.getTime() + (24*3600));
+			var expires = "expires="+ d.toUTCString();
+			document.cookie = "user_id" + "=" + cvalue + ";" + expires + ";path=/";
+			console.log("successful?")
+		}
+	}).catch(function (error) {
+		alert('request failed', error)
+	});
+</script>
 
 </html>

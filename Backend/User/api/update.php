@@ -17,11 +17,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'PUT') {
 
     $user = new Users($db);
 
-    $data = json_decode(file_get_contents("php://input"), true);
+    // $data = json_decode(file_get_contents("php://input"), true);
 
-    $user->id = $data["id"];
-    $user->email = $data["email"];
-    $user->address = $data["address"];
+
+    $user->id = $_REQUEST["id"];
+    $user->email = $_REQUEST["email"];
+    $user->address = $_REQUEST["address"];
 
     if ($user->update()) {
         $session = array(

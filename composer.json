@@ -1,9 +1,0 @@
-{
-    "name": "vynsss/project",
-    "type": "project",
-    "description": "project",
-    "require": {
-        "php": "^7.2.5",
-        "monolog/monolog": "1.0.*"
-    }
-}

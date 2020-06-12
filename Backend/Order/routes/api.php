@@ -20,14 +20,13 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/carts', 'CartController@show');
-Route::get('/carts/all', 'CartController@show_all');    //to check only might 
+Route::get('/carts/all', 'CartController@show_all');    //to check only might
 Route::get('/statuses', 'StatusController@show');
 Route::get('/orders', 'OrderController@show');
 
 //carts
 Route::post('/carts/add', 'CartController@add');
 Route::put('/carts/update', 'CartController@update_status');
-
 
 //order
 Route::post('/orders/add', 'OrderController@add');

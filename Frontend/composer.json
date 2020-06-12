@@ -1,7 +1,7 @@
 {
-    "name": "vynsss/user",
+    "name": "vynsss/frontend",
     "type": "project",
-    "description": "user service",
+    "description": "frontenddd",
     "require": {
         "php": "^7.2.5",
         "monolog/monolog": "1.0.*"

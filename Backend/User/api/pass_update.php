@@ -17,18 +17,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'PUT') {
 
     $user = new Users($db);
 
-    $data = json_decode(file_get_contents("php://input"), true);
+    // $data = json_decode(file_get_contents("php://input"), true);
+    $password = $_REQUEST["password"];
+    $confirm_password = $_REQUEST["confirm_password"];
+    $token = $_REQUEST["token"];
 
-    if (empty($data["password"])) {
+    if (empty($password)) {
         echo json_encode(array("success" => false, "message" => "password is empty"));
     }
-    if (empty($data["passwordconf"])) {
+    if (empty($confirm_password)) {
         echo json_encode(array("success" => false, "message" => "password is empty"));
     }
     
-    if($data["password"] == $data["passwordconf"]){
+    if($password == $confirm_password){
         $user->id = $data["id"];
-        $user->password = password_hash(htmlspecialchars(strip_tags($data["password"])), PASSWORD_DEFAULT);
+        $user->password = password_hash(htmlspecialchars(strip_tags($password)), PASSWORD_DEFAULT);
 
         if ($user->update_password()) {
             $session = array(

@@ -22,10 +22,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/products', 'ProductController@show_available');    //customer
 Route::get('/categories', 'CategoryController@show');           //customer
 Route::get('/statuses', 'StatusController@show');
+// Route::get('/test', 'ProductController@test');
 
 //product controller
 Route::get('/products/category', 'ProductController@show_category');//customer
 Route::get('/products/pagination', 'ProductController@pagination');
+Route::get('/product', 'ProductController@show_individual');
 
 //status controller
 Route::post('/statuses/create', 'StatusController@insert');

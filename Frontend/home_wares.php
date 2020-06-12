@@ -19,15 +19,13 @@
         <div class="container">
             <div class="row">
                 <?php
-                    $contents_europeana = fopen("https://product-service-fp.herokuapp.com/api/products", "r");
-                    $json_europeana = stream_get_contents($contents_europeana);
-                    fclose($contents_europeana);
+                    $products = fopen("https://product-service-fp.herokuapp.com/api/products", "r");
+                    $product = stream_get_contents($products);
+                    fclose($products);
 
+                    $data = json_decode($product);
 
-                    $data_europeana = json_decode($json_europeana);
-                    // print $data_europeana->product[0]->name;
-
-                    foreach($data_europeana->product as $item) {
+                    foreach($data->product as $item) {
                         print '<div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="100">';
                         print '<a href="about_us.php"><img src="images/'.$item->image.'" alt="Image" class="img-fluid"></a>';
                         print '<div class="p-4 bg-white">';

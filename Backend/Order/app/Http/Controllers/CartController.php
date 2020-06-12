@@ -46,7 +46,7 @@ class CartController extends Controller
         ));
     }
 
-    public function update_staus(Request $request){
+    public function update_status(Request $request){
         $id = $request->input('id');
         $stmt= DB::update('UPDATE carts SET status_id = 2 WHERE id = :id', [
             'id' => $id

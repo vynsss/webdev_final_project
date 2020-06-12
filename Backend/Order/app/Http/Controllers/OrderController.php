@@ -48,6 +48,8 @@ class OrderController extends Controller
                     'user_id' => $user,
                     'date' => $date
                     ]);
+        } else{
+            return;
         }
 
         echo json_encode(array(
