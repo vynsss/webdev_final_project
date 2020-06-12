@@ -1,5 +1,4 @@
 # User Service
-Service available in 
 ### Continuous Integration
 Github action workflow for Laravel
 
