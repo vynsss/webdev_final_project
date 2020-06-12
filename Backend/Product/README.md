@@ -1,5 +1,7 @@
 # Product Service
 Service available in <a href="https://product-service-fp.herokuapp.com/">https://product-service-fp.herokuapp.com/</a>
+### Continuous Integration
+Github action workflow for Laravel
 
 ## APIs
 ### Customer
