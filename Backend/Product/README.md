@@ -4,11 +4,11 @@ Github action workflow for Laravel
 
 ## APIs
 ### Customer
-- <a href="https://product-service-fp.herokuapp.com/api/products">https://product-service-fp.herokuapp.com/api/products</a> list all product available in the shop
-- <a href="https://product-service-fp.herokuapp.com/api/product">https://product-service-fp.herokuapp.com/api/product</a> show an individual product
-- <a href="https://product-service-fp.herokuapp.com/api/products/category">https://product-service-fp.herokuapp.com/api/products/category</a> list all product available under a category
-- <a href="https://product-service-fp.herokuapp.com/api/categories">https://product-service-fp.herokuapp.com/api/categories</a> list all the categories available
+- <a href="https://product-service-fp.herokuapp.com/api/products">List all product available in the shop</a>
+- <a href="https://product-service-fp.herokuapp.com/api/product">Show individual product</a>
+- <a href="https://product-service-fp.herokuapp.com/api/products/category">List all product available under a category</a>
+- <a href="https://product-service-fp.herokuapp.com/api/categories">List all the categories available</a>
 
 ### Admin
-- <a href="https://product-service-fp.herokuapp.com/api/admin/products/create">https://product-service-fp.herokuapp.com/api/admin/products/create</a> to create new product
-- <a href="https://product-service-fp.herokuapp.com/api/admin/products/update">https://product-service-fp.herokuapp.com/api/admin/products/update</a> edit the availablitity of the product and pricing
+- <a href="https://product-service-fp.herokuapp.com/api/admin/products/create">Create new product</a>
+- <a href="https://product-service-fp.herokuapp.com/api/admin/products/update">Edit the availablitity of the product and pricing</a>
