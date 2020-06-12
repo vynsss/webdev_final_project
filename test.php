@@ -29,13 +29,27 @@
 					print '<td>'.$item->name.'</td>';
 					print '<td>'.$item->price.'</td>';
 					print '<td>'.$item->description.'</td>';
-					print '</tr>>';
+					print '</tr>';
 				}
+
+				print '<br><br> The result below will be for testing<br>';
+				//test section
+				$id = 1;
+				$test_url = "http://localhost:8000/api/product?id={$id}";
+				$test_datas = fopen($test_url, "r");
+				$json_test = stream_get_contents($test_datas);
+				fclose($test_datas);
+
+
+				$data_test = json_decode($json_test);
+				print $data_test->result[0]->name;
+				print '<hr>';
 			?>	
 		</table>
 	</div>
 
 	<div>
+	<br><br><p>The form below will be for testing purposes only</p><br>
 		<iframe name="hiddenFrame" width="0" height="0" border="0" style="display: none;"></iframe>
 		<form action="https://product-service-fp.herokuapp.com/api/products/create" method="POST" name="test" target="hiddenFrame" onsubmit="window.location.reload()">
 			<label>Name:		</label><input type="text" name="name"><br>
@@ -46,10 +60,9 @@
 			<input value="Submit" type="submit" onclick="submitform()">
 		</form>
 	</div>
+<!-- 
+	<p>check console log plss</p> -->
 
-	<p>check console log plss</p>
-
-	<?php echo $_COOKIE["id"]?>
 </body>
 
 
@@ -92,29 +105,29 @@
 // 	});
 
 
-var url = new URL('http://localhost/web_tutorial/fp/backend/user/api/login.php')
+// var url = new URL('http://localhost/web_tutorial/fp/backend/user/api/login.php')
 
-var params = {username: "vynsss", password: "123456"} // or:
+// var params = {username: "vynsss", password: "123456"} // or:
 
-url.search = new URLSearchParams(params).toString();
-	fetch(url)
-	.then(data => data.text())
-	.then((text) => {
-		console.log('request succeeded with JSON response', text)
-		var data = JSON.parse(text)
-		var success = data.success;
-		var id = data.session.id;
-		// console.log(id)
-		if (success == true){
-			var d = new Date();
-			d.setTime(d.getTime() + (24*3600));
-			var expires = "expires="+ d.toUTCString();
-			document.cookie = "user_id" + "=" + cvalue + ";" + expires + ";path=/";
-			console.log("successful?")
-		}
-	}).catch(function (error) {
-		alert('request failed', error)
-	});
+// url.search = new URLSearchParams(params).toString();
+// 	fetch(url)
+// 	.then(data => data.text())
+// 	.then((text) => {
+// 		console.log('request succeeded with JSON response', text)
+// 		var data = JSON.parse(text)
+// 		var success = data.success;
+// 		var id = data.session.id;
+// 		// console.log(id)
+// 		if (success == true){
+// 			var d = new Date();
+// 			d.setTime(d.getTime() + (24*3600));
+// 			var expires = "expires="+ d.toUTCString();
+// 			document.cookie = "user_id" + "=" + cvalue + ";" + expires + ";path=/";
+// 			console.log("successful?")
+// 		}
+// 	}).catch(function (error) {
+// 		alert('request failed', error)
+// 	});
 </script>
 
 </html>

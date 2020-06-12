@@ -25,7 +25,7 @@ include 'include/login_signup.php';
 
 <!-- http://localhost/web_tutorial/fp/backend/user/api/login.php -->
                     <iframe name="hiddenFrame" width="0" height="0" border="0" style="display: none;"></iframe>
-                    <form action="http://localhost:8000/api/login" method="GET" name="login" target="hiddenFrame" class="contact-form">
+                    <form action="https://user-service-fp.herokuapp.com/api/login" method="GET" name="login" target="hiddenFrame" class="contact-form">
 
                         <p style="color: #fff">h</p>
                         <div class="row form-group">
@@ -69,9 +69,9 @@ include 'include/login_signup.php';
         var pwd = document.getElementById("password").value;
         
         // Displaying the value
-        // alert(username, password);
+        // alert(user, pwd);
 
-        var url = new URL('http://localhost:8000/api/login')
+        var url = new URL('https://user-service-fp.herokuapp.com/api/login')
 
         var params = {username: user, password: pwd} // or:
 
@@ -79,7 +79,7 @@ include 'include/login_signup.php';
             fetch(url)
             .then(data => data.text())
             .then((text) => {
-                console.log('request succeeded with JSON response', text)
+                console.log('request succeeded with JSON response')
                 var data = JSON.parse(text)
                 var success = data.success;
                 var id = data.id;
@@ -90,6 +90,10 @@ include 'include/login_signup.php';
                     var expires = "expires="+ d.toUTCString();
                     document.cookie = "user_id" + "=" + id + ";" + expires + ";path=/";
                     console.log("successful?")
+                    location.href = "https://frontend-fp.herokuapp.com";
+                }
+                else{
+                    alert("Wrong username or password, please retry!");
                 }
             }).catch(function (error) {
                 console.log('request failed', error)

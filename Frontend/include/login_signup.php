@@ -49,7 +49,7 @@
         <div class="container py-1">
             <div class="row align-items-center">
                 <div class="col-8 col-md-8 col-lg-12">
-                    <h1 class="mb-0"><a href="home.php" class="text-white h2 mb-0"><strong>Bali Products<span class="text-primary">.</span></strong></a></h1>
+                    <h1 class="mb-0"><a href="index.php" class="text-white h2 mb-0"><strong>Bali Products<span class="text-primary">.</span></strong></a></h1>
                     <h4 style="text-align: right; color: rgba(255, 255, 255, 0.5); letter-spacing: 4px "><span><a href="login.php">Login</a></span> / <span><a href="sign_up.php">Sign Up</a></span><span style="color: rgba(255, 255, 255, 0)">---</span> | <span style="color: rgba(255, 255, 255, 0)">---</span><span><a href="#" style="text-align: right"><span class="icon-shopping-cart"></span></a></span></h4>
                     <!--vicky ini buat klo udh login jdi namanya langsung ada gitu-->
                     <!--<h4 style="text-align: right; color: rgba(255, 255, 255, 0.5); letter-spacing: 4px "><span style="color: #e3c4a8">Vicky Vanessa</span><span style="color: rgba(255, 255, 255, 0)">-&#45;&#45;</span> | <span style="color: rgba(255, 255, 255, 0)">-&#45;&#45;</span><span><a href="#" style="text-align: right"><span class="icon-shopping-cart"></span></a></span></h4>-->

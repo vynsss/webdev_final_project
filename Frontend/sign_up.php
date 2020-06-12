@@ -22,7 +22,7 @@
 
 
                     <iframe name="hiddenFrame" width="0" height="0" border="0" style="display: none;"></iframe>
-                    <form action="http://localhost:8000/api/register" method="POST" name="register" target="hiddenFrame" class="contact-form">
+                    <form action="https://user-service-fp.herokuapp.com/api/register" method="POST" name="register" target="" class="contact-form">
 
                         <p style="color: #fff">h</p>
 
@@ -105,7 +105,7 @@
         }
 
         document.getElementById("register_button").onclick = function () {
-            location.href = "https://frontend-fp.herokuapp.com/index.php";
+            location.href = "https://frontend-fp.herokuapp.com/login.php";
         };
     </script>
 
