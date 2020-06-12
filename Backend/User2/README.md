@@ -4,5 +4,5 @@ Github action workflow for Laravel
 
 ## APIs
 ### Customer
-- <a href="https://user-service-fp.herokuapp.com/api/login">https://user-service-fp.herokuapp.com/api/login</a> for Login
-- <a href="https://user-service-fp.herokuapp.com/api/register">https://user-service-fp.herokuapp.com/api/register</a> for Registering
+- <a href="https://user-service-fp.herokuapp.com/api/login">Login</a>
+- <a href="https://user-service-fp.herokuapp.com/api/register">Registering</a>
