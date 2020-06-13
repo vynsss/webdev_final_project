@@ -54,12 +54,26 @@ class UserController extends Controller
 
     public function data(Request $request){
         $id = $request->input('id');
-        $stmt = DB::select('SELECT * FROM users WHERE id=:id', [
-            "id" => $id
-        ]);
-        echo json_encode([
-            "success" => true,
-            "data" => $stmt
-        ]);
+        $check = $request->input('check');
+        $check_token = "abc123";
+
+        if($check == $check_token){ //check if ppl try to take user lol
+            $stmt = DB::select('SELECT * FROM users WHERE id=:id', [
+                "id" => $id
+            ]);
+            echo json_encode([
+                "success" => true,
+                "username" => $stmt[0]->username,
+                "first_name" => $stmt[0]->first_name,
+                "last_name" => $stmt[0]->last_name,
+                "email" => $stmt[0]->email,
+                "address" => $stmt[0]->address,
+            ]);
+        } else{
+            echo json_encode([
+                "success" => false,
+                "message" => "please log in to read your informationn:)"
+            ]);
+        }
     }
 }

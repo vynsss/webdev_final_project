@@ -92,7 +92,7 @@
                 // console.log(id)
                 if (success == true){
                     var d = new Date();
-                    d.setTime(d.getTime() + (24*3600));
+                    d.setDate(d.getDate() + 1);
                     var expires = "expires="+ d.toUTCString();
                     document.cookie = "user_id" + "=" + id + ";" + expires + ";path=/";
                     document.cookie = "username" + "=" + username + ";" + expires + ";path=/";

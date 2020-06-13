@@ -20,3 +20,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::post('/register', 'UserController@register');
 Route::get('/login', 'UserController@login');
+Route::get('/profile', 'UserController@data');

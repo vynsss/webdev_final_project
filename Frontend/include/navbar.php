@@ -47,7 +47,7 @@
                     <!-- the code below activated when session of cookie is set -->
                     <?php
                         if(!isset($_COOKIE["user_id"])){
-                            print '<h4 style="text-align: right; color: rgba(255, 255, 255, 0.5); letter-spacing: 4px "><span><a href="login.php">Login</a></span> / <span><a href="sign_up.php">Sign Up</a></span><span style="color: rgba(255, 255, 255, 0)">---</span> | <span style="color: rgba(255, 255, 255, 0)">---</span><span><a href="#" style="text-align: right"><span class="icon-shopping-cart"></span></a></span></h4>';
+                            print '<h4 style="text-align: right; color: rgba(255, 255, 255, 0.5); letter-spacing: 4px "><span><a href="login.php">Login</a></span> / <span><a href="sign_up.php">Sign Up</a></span><span style="color: rgba(255, 255, 255, 0)">---</span> | <span style="color: rgba(255, 255, 255, 0)">---</span><span><a href="cart.php" style="text-align: right"><span class="icon-shopping-cart"></span></a></span></h4>';
                         }
                         else{
                             print '<h4 style="text-align: right; color: rgba(255, 255, 255, 0.5); letter-spacing: 4px "><a href="user_info.php"><span style="color: #e3c4a8">' .$_COOKIE["username"]. '</span></a><span style="color: rgba(255, 255, 255, 0)">---</span> | <span style="color: rgba(255, 255, 255, 0)">---</span><span><a href="cart.php" style="text-align: right"><span class="icon-shopping-cart"></span></a></span></h4>';

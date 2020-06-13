@@ -25,7 +25,7 @@
             <div class="row align-items-center justify-content-center">
                 <div class="col-md-7 text-center" data-aos="fade-up" data-aos-delay="400">
                     <h1 class="text-white">Profile</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <p>Welcome Back!</p>
                 </div>
             </div>
         </div>
@@ -41,36 +41,48 @@
                 <!--</div>-->
             <!--</div>-->
             <div class="row" >
-                <a href="home_wares.html"><div class="col-md-6 col-lg-12 mb-5 mb-lg-5" >
+                <!-- <a href="home_wares.html"><div class="col-md-6 col-lg-12 mb-5 mb-lg-5" > -->
                     <div class="team-member" style="width:250px;height:250px;">
 
                         <img src="images/person_1.jpg" alt="Image" class="img-fluid" >
 
-                        <div class="text" style="text-align: center">
+                        <!-- <div class="text" style="text-align: center"> -->
 
                             <!--this <p></p> itu biar edit picture nya di middle cos gbisa idk why-->
-                            <p class="mb-4" style="color: rgba(51, 51, 51,0.1)">Lorem ipsum dolor sit amet consectetur adipisicing</p>
-                            <h2 class="mb-2 font-weight-light h2" style="text-align: center">Edit Picture</h2>
+                            <!-- <p class="mb-4" style="color: rgba(51, 51, 51,0.1)">Lorem ipsum dolor sit amet consectetur adipisicing</p>
+                            <h2 class="mb-2 font-weight-light h2" style="text-align: center">Edit Picture</h2> -->
                             <!--<span class="d-block mb-2 text-white">Decor Items, Decor Materials, Sculptures, Ethnic & Tribal</span>-->
                             <!--<p class="mb-4" style="color: rgba(51, 51, 51,0.1)">Lorem ipsum dolor sit amet consectetur adipisicing elit ullam reprehenderit nemo.</p>-->
-                            <p>
+                            <!-- <p>
                                 <a class="text-white p-2"></a>
                                 <a class="text-white p-2"></a>
                                 <a class="text-white p-2"></a>
                             </p>
-                        </div>
+                        </div> -->
 
                     </div>
-                    <p style="color: white;text-indent: 500px">lorem</p>
-                    <h1 class="mb-3" style="text-indent: 50px">Vicky Vanessa</h1>
-                    <h4 style="text-indent: 70px">Username: <span style="text-indent: 20px;color: #e3c4a8">@v.vkyyyy</span></h4>
-                    <h4 style="text-indent: 70px">Email: <span style="text-indent: 20px;color: #e3c4a8">Vicky_vanessa@gmail.com</span></h4>
-                    <h4 style="text-indent: 70px">Address: <span style="text-indent: 20px;color: #e3c4a8">Komplek Jembatan 2, Jalan Arwana 1, No.4A</span></h4>
+                    <?php
+                        $id = $_COOKIE["user_id"];
+                        $url = "http://user-service-fp.herokuapp.com/api/data?id={$id}&check=abc123";
+                        $test_datas = fopen($url, "r");
+                        $json_test = stream_get_contents($test_datas);
+                        fclose($test_datas);
 
+
+                        $data_test = json_decode($json_test);
+                        // print $data_test->first_name;
+                        // print '<hr>';
+
+                        print '<p style="color: white;text-indent: 500px">lorem</p>';
+                        print '<h1 class="mb-3" style="text-indent: 50px">' .$data_test->first_name. ' ' .$data_test->last_name. '</h1>';
+                        print '<h4 style="text-indent: 70px">Username: <span style="text-indent: 20px;color: #e3c4a8">@' .$data_test->username. '</span></h4>';
+                        print '<h4 style="text-indent: 70px">Email: <span style="text-indent: 20px;color: #e3c4a8">' .$data_test->email. '</span></h4>';
+                        print '<h4 style="text-indent: 70px">Address: <span style="text-indent: 20px;color: #e3c4a8">' .$data_test->address. '</span></h4>';
+                    ?>
 
                     
                 </div>
-                </a>
+                <!-- </a> -->
 
               
             </div>

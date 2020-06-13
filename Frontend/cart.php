@@ -120,63 +120,6 @@
                         </div>
                         </div>
 
-
-
-
-                        <!--<div class="row form-group">-->
-                            <!--<div class="col-md-12 mb-3 mb-md-0">-->
-                                <!--<label class="font-weight-bold" for="firstname">First Name</label>-->
-                                <!--<input type="text" id="firstname" class="form-control" placeholder="First Name">-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="row form-group">-->
-                            <!--<div class="col-md-12 mb-3 mb-md-0">-->
-                                <!--<label class="font-weight-bold" for="lastname">Last Name</label>-->
-                                <!--<input type="text" id="lastname" class="form-control" placeholder="Last Name">-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="row form-group">-->
-                            <!--<div class="col-md-12 mb-3 mb-md-0">-->
-                                <!--<label class="font-weight-bold" for="username">Username</label>-->
-                                <!--<input type="text" id="username" class="form-control" placeholder="First Name">-->
-                                <!--<p style="color: red">Invalid Username</p>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="row form-group">-->
-                            <!--<div class="col-md-12">-->
-                                <!--<label class="font-weight-bold" for="email">Email</label>-->
-                                <!--<input type="email" id="email" class="form-control" placeholder="Email Address">-->
-                                <!--<p style="color: red">Invalid Email</p>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="row form-group">-->
-                            <!--<div class="col-md-12">-->
-                                <!--<label class="font-weight-bold" for="password">Password</label>-->
-                                <!--<input type="password" id="password" class="form-control" placeholder="Password">-->
-                                <!--<p style="color: red">Invalid Password</p>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="row form-group">-->
-                            <!--<div class="col-md-12">-->
-                                <!--<label class="font-weight-bold" for="confirm_password">Password</label>-->
-                                <!--<input type="password" id="confirm_password" class="form-control" placeholder="Confirm Password">-->
-                                <!--<p style="color: red">Password Doesn't Match</p>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="row form-group">-->
-                            <!--<div class="col-md-12">-->
-                                <!--<label class="font-weight-bold" for="address">Address</label>-->
-                                <!--<textarea name="message" id="address" cols="30" rows="5" class="form-control"-->
-                                          <!--placeholder="Say hello to us"></textarea>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="row form-group">-->
-                            <!--<div class="col-md-12">-->
-                                <!--<input type="submit" value="Sign Up" class="btn btn-primary py-3 px-4">-->
-                            <!--</div>-->
-                        <!--</div>-->
-
-
                     </form>
                 </div>
 
