@@ -25,14 +25,14 @@ Route::get('/statuses', 'StatusController@show');
 Route::get('/orders', 'OrderController@show');
 
 //carts
-Route::post('/carts/add', 'CartController@add');
+Route::post('/carts/create', 'CartController@add');
 Route::put('/carts/update', 'CartController@update_status');
 
 //order
-Route::post('/orders/add', 'OrderController@add');
+Route::post('/orders/create', 'OrderController@add');
 
 Route::prefix('/admin')->group(function(){
     //status
-    Route::post('/statuses/add', 'StatusController@add');
+    Route::post('/statuses/create', 'StatusController@add');
     Route::put('/statuses/update', 'StatusController@update');
 });

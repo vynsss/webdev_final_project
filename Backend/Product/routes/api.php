@@ -29,10 +29,6 @@ Route::get('/products/category', 'ProductController@show_category');//customer
 Route::get('/products/pagination', 'ProductController@pagination');
 Route::get('/product', 'ProductController@show_individual');
 
-//status controller
-Route::post('/statuses/create', 'StatusController@insert');
-Route::put('/statuses/update', 'StatusController@update');
-
 Route::prefix('/admin')->group(function(){
     Route::post('/products/create', 'ProductController@insert');
     Route::put('/products/update', 'ProductController@update');

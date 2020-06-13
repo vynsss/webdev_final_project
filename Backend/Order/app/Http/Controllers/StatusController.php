@@ -15,7 +15,7 @@ class StatusController extends Controller
                     'name' => $name
                 ]);
         echo json_encode(array(
-            "success" => true,
+            "success" => $stmt,
             "message" => "status successfully updated"
         ));
     }

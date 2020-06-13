@@ -35,7 +35,7 @@
 				print '<br><br> The result below will be for testing<br>';
 				//test section
 				$id = 1;
-				$test_url = "http://localhost:8000/api/product?id={$id}";
+				$test_url = "https://product-service-fp.herokuapp.com/api/product?id={$id}";
 				$test_datas = fopen($test_url, "r");
 				$json_test = stream_get_contents($test_datas);
 				fclose($test_datas);

@@ -42,20 +42,22 @@ class OrderController extends Controller
         $date = Carbon::now()->toDateString();
 
         $check = DB::table('orders')->where('user_id', $user)->where('status_id', 1)->count();
-        if($check > 0){
-            $stmt = DB::table('orders')
-                ->insert([
-                    'user_id' => $user,
-                    'date' => $date
-                    ]);
+        if($check > 0){         //already available???
+            echo json_encode([
+                "success" => false,
+                "message" => "the cart for the user is already available"
+            ]);
         } else{
-            return;
+            $stmt = DB::table('orders')
+            ->insert([
+                'user_id' => $user,
+                'date' => $date
+                ]);
+            echo json_encode(array(
+                "success" => $stmt,
+                "message" => "Successfully inserted data"
+            ));
         }
-
-        echo json_encode(array(
-            "success" => $stmt,
-            "message" => "Successfully inserted data"
-        ));
     }
 
     public function update_status(Request $request){
