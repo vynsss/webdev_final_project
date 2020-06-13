@@ -13,18 +13,39 @@
         </div>
     </div>
 
-    <div class="container">
-        <div class="featured-property-half d-flex">
-            <div class="image" style="background-image: url('images/ss1.png')"></div>
-            <div class="text">
-                <h2>Chicken Nugget</h2>
-                <p class="mb-5">Freshly Made</p>
-                <ul class="property-list-details mb-5">
-                    <li>Price: <strong class="text-black">15,000</strong></li>
-                    <li><strong>Available</strong></li>
-                    <!--<li>location: <strong>Jl. Raya Pantai Berawa Gg Bisma No. 1  Canggu, Bali, Indonesia</strong></li>-->
-                </ul>
-                <p><a href="#" class="btn btn-primary px-4 py-3">Add to Cart</a></p>
+    <div class="site-section">
+        <div class="container">
+            <!-- <div class="featured-property-half d-flex">  -->
+            <div class = "col-lg-12">
+                <?php
+                    //to populate product data
+                    $id = $_SESSION["product"];
+                    $url = "https://product-service-fp.herokuapp.com/api/product?id={$id}";
+                    $test_datas = fopen($url, "r");
+                    $json_test = stream_get_contents($test_datas);
+                    fclose($test_datas);
+
+                    $data_test = json_decode($json_test);
+                    
+                    $img = $data_test->result[0]->image;
+                    // print "<div class='image' style='background-image: url('images/". $data_test->result[0]->image ."')'></div>";
+                    print '<figure>';
+                    print '<img src="images/'.$img.'" alt="Image" class="img-fluid" >';
+                    print '</figure>';
+                // <div class="image" style="background-image: url('images/img_4.jpg')"></div>
+
+                    print '<div class="text">';
+
+                        print '<h2>' .$data_test->result[0]->name. '</h2>';
+                        print '<p class="mb-5">' .$data_test->result[0]->description. '</p>';
+                        print '<ul class="property-list-details mb-5">';
+                            print '<li>Price: <strong class="text-black">Rp. ' .$data_test->result[0]->price. '</strong></li>';
+                            print '<li><strong>' .$data_test->status. '</strong></li>';
+                            // <!--<li>location: <strong>Jl. Raya Pantai Berawa Gg Bisma No. 1  Canggu, Bali, Indonesia</strong></li>-->
+                        print '</ul>';
+                        print '<p><a href="#" class="btn btn-primary px-4 py-3">Add to Cart</a></p>';
+                    ?>
+                <!-- </div> -->
             </div>
         </div>
     </div>

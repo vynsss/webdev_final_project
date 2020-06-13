@@ -1,6 +1,5 @@
 <?php
     include 'include/navbar.php';
-    include 'php/user.php';
 ?> 
 <style>
     .center{

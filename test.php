@@ -12,6 +12,7 @@
 				<th>name</th>
 				<th>price</th>
 				<th>decription</th>
+				<th>image</th>
 			<tr>
 
 			<?php
@@ -29,6 +30,7 @@
 					print '<td>'.$item->name.'</td>';
 					print '<td>'.$item->price.'</td>';
 					print '<td>'.$item->description.'</td>';
+					print '<td>'.$item->image.'</td>';
 					print '</tr>';
 				}
 

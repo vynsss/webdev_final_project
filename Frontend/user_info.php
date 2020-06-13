@@ -63,7 +63,7 @@
                     </div>
                     <?php
                         $id = $_COOKIE["user_id"];
-                        $url = "http://user-service-fp.herokuapp.com/api/data?id={$id}&check=abc123";
+                        $url = "http://user-service-fp.herokuapp.com/api/profile?id={$id}&check=abc123";
                         $test_datas = fopen($url, "r");
                         $json_test = stream_get_contents($test_datas);
                         fclose($test_datas);

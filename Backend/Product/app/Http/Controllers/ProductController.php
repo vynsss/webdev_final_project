@@ -27,7 +27,12 @@ class ProductController extends Controller
         $stmt = DB::select('SELECT * from products WHERE id=:id', [
             'id' => $request->id
         ]);
-        echo json_encode(array("success" => true, "result" => $stmt));
+        $status = DB::table('statuses')->where('id', $stmt[0]->status_id)->first();
+        echo json_encode(array(
+            "success" => true,
+            "result" => $stmt,
+            "status" => $status->name
+        ));
     }
 
     public function show_category(Request $request){

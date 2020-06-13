@@ -1,7 +1,11 @@
 <?php
-    if($_REQUEST["product_id"]){
-        $_SESSION["product_id"] = $_REQUEST["product_id"];
+    session_start();
+
+    if(isset($_REQUEST["id"])){
+        $_SESSION["product"] = $_REQUEST["id"];
 
         header('Location: ../items.php'); //change it later
+    } else{
+        header('Location: ../home_wares.php');
     }
 ?>
