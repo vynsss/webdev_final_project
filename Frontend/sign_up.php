@@ -1,6 +1,17 @@
 <?php
-    include 'include/login_signup.php';
+    include 'include/navbar.php';
 ?>
+
+<style>
+    .featured-property {
+        position: relative;
+        background: #fff;
+        margin-top: -100px;
+        -webkit-box-shadow: 0 0 20px -5px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 0 20px -5px rgba(0, 0, 0, 0.1); }
+    .featured-property div {
+        width: 100%; }
+</style>
 
     <div class="site-blocks-cover inner-page-cover overlay" style="background-image: url('images/balivilla.jpg');"
          data-aos="fade" data-stellar-background-ratio="0.5" data-aos="fade">

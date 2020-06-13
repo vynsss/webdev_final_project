@@ -1,9 +1,17 @@
 <?php
-
-use Dotenv\Result\Success;
-
-include 'include/login_signup.php';
+    include 'include/navbar.php';
 ?>
+
+<style>
+    .featured-property {
+        position: relative;
+        background: #fff;
+        margin-top: -100px;
+        -webkit-box-shadow: 0 0 20px -5px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 0 20px -5px rgba(0, 0, 0, 0.1); }
+    .featured-property div {
+        width: 100%; }
+</style>
 
     <div class="site-blocks-cover inner-page-cover overlay" style="background-image: url('images/balivilla.jpg');"
          data-aos="fade" data-stellar-background-ratio="0.5" data-aos="fade">
@@ -67,13 +75,10 @@ include 'include/login_signup.php';
         // Selecting the input element and get its value 
         var user = document.getElementById("username").value;
         var pwd = document.getElementById("password").value;
-        
-        // Displaying the value
-        // alert(user, pwd);
 
         var url = new URL('https://user-service-fp.herokuapp.com/api/login')
 
-        var params = {username: user, password: pwd} // or:
+        var params = {username: user, password: pwd}
 
         url.search = new URLSearchParams(params).toString();
             fetch(url)
@@ -83,12 +88,14 @@ include 'include/login_signup.php';
                 var data = JSON.parse(text)
                 var success = data.success;
                 var id = data.id;
+                var username = data.username;
                 // console.log(id)
                 if (success == true){
                     var d = new Date();
                     d.setTime(d.getTime() + (24*3600));
                     var expires = "expires="+ d.toUTCString();
                     document.cookie = "user_id" + "=" + id + ";" + expires + ";path=/";
+                    document.cookie = "username" + "=" + username + ";" + expires + ";path=/";
                     console.log("successful?")
                     location.href = "https://frontend-fp.herokuapp.com";
                 }

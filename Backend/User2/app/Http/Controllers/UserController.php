@@ -18,7 +18,8 @@ class UserController extends Controller
         if($stmt && password_verify($password, $stmt[0]->password)){
             echo json_encode([
                 "success" => true,
-                "id" => $stmt[0]->id
+                "id" => $stmt[0]->id,
+                "username" => $stmt[0]->username
             ]);
         } else{
             echo json_encode([
