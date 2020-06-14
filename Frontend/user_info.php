@@ -1,6 +1,6 @@
 <?php
     include 'include/navbar.php';
-    include 'php/user.php';
+    // include 'php/user.php';
 ?>
 
 <style>
@@ -62,22 +62,26 @@
 
                     </div>
                     <?php
-                        $id = $_COOKIE["user_id"];
-                        $url = "http://user-service-fp.herokuapp.com/api/profile?id={$id}&check=abc123";
-                        $test_datas = fopen($url, "r");
-                        $json_test = stream_get_contents($test_datas);
-                        fclose($test_datas);
+                        if(isset($_COOKIE["user_id"])){
+                            $id = $_COOKIE["user_id"];
+                            $url = "http://user-service-fp.herokuapp.com/api/profile?id={$id}&check=abc123";
+                            $test_datas = fopen($url, "r");
+                            $json_test = stream_get_contents($test_datas);
+                            fclose($test_datas);
 
 
-                        $data_test = json_decode($json_test);
-                        // print $data_test->first_name;
-                        // print '<hr>';
+                            $data_test = json_decode($json_test);
+                            // print $data_test->first_name;
+                            // print '<hr>';
 
-                        print '<p style="color: white;text-indent: 500px">lorem</p>';
-                        print '<h1 class="mb-3" style="text-indent: 50px">' .$data_test->first_name. ' ' .$data_test->last_name. '</h1>';
-                        print '<h4 style="text-indent: 70px">Username: <span style="text-indent: 20px;color: #e3c4a8">@' .$data_test->username. '</span></h4>';
-                        print '<h4 style="text-indent: 70px">Email: <span style="text-indent: 20px;color: #e3c4a8">' .$data_test->email. '</span></h4>';
-                        print '<h4 style="text-indent: 70px">Address: <span style="text-indent: 20px;color: #e3c4a8">' .$data_test->address. '</span></h4>';
+                            print '<p style="color: white;text-indent: 500px">lorem</p>';
+                            print '<h1 class="mb-3" style="text-indent: 50px">' .$data_test->first_name. ' ' .$data_test->last_name. '</h1>';
+                            print '<h4 style="text-indent: 70px">Username: <span style="text-indent: 20px;color: #e3c4a8">@' .$data_test->username. '</span></h4>';
+                            print '<h4 style="text-indent: 70px">Email: <span style="text-indent: 20px;color: #e3c4a8">' .$data_test->email. '</span></h4>';
+                            print '<h4 style="text-indent: 70px">Address: <span style="text-indent: 20px;color: #e3c4a8">' .$data_test->address. '</span></h4>';
+                        } else{
+                            print '<h1>It seems you were away for too long.<br> Please login again!</h1>';
+                        }
                     ?>
 
                     
