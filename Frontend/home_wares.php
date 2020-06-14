@@ -19,7 +19,7 @@
         <div class="container">
             <div class="row">
                 <?php
-                    $products = fopen("https://product-service-fp.herokuapp.com/api/products", "r");
+                    $products = fopen("https://product-service-fp.herokuapp.com/api/products/category?category_id=1", "r");
                     $product = stream_get_contents($products);
                     fclose($products);
 

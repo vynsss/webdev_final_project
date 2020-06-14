@@ -18,32 +18,36 @@
             <!-- <div class="featured-property-half d-flex">  -->
             <div class = "col-lg-12">
                 <?php
-                    //to populate product data
-                    $id = $_SESSION["product"];
-                    $url = "https://product-service-fp.herokuapp.com/api/product?id={$id}";
-                    $test_datas = fopen($url, "r");
-                    $json_test = stream_get_contents($test_datas);
-                    fclose($test_datas);
+                    if(isset($_SESSION["product"])){
+                        //to populate product data
+                        $id = $_SESSION["product"];
+                        $url = "https://product-service-fp.herokuapp.com/api/product?id={$id}";
+                        $test_datas = fopen($url, "r");
+                        $json_test = stream_get_contents($test_datas);
+                        fclose($test_datas);
 
-                    $data_test = json_decode($json_test);
-                    
-                    $img = $data_test->result[0]->image;
-                    // print "<div class='image' style='background-image: url('images/". $data_test->result[0]->image ."')'></div>";
-                    print '<figure>';
-                    print '<img src="images/'.$img.'" alt="Image" class="img-fluid" >';
-                    print '</figure>';
-                // <div class="image" style="background-image: url('images/img_4.jpg')"></div>
+                        $data_test = json_decode($json_test);
+                        
+                        $img = $data_test->result[0]->image;
+                        // print "<div class='image' style='background-image: url('images/". $data_test->result[0]->image ."')'></div>";
+                        print '<figure>';
+                        print '<img src="images/'.$img.'" alt="Image" class="img-fluid" >';
+                        print '</figure>';
+                        // <div class="image" style="background-image: url('images/img_4.jpg')"></div>
 
-                    print '<div class="text">';
+                        print '<div class="text">';
 
-                        print '<h2>' .$data_test->result[0]->name. '</h2>';
-                        print '<p class="mb-5">' .$data_test->result[0]->description. '</p>';
-                        print '<ul class="property-list-details mb-5">';
-                            print '<li>Price: <strong class="text-black">Rp. ' .$data_test->result[0]->price. '</strong></li>';
-                            print '<li><strong>' .$data_test->status. '</strong></li>';
-                            // <!--<li>location: <strong>Jl. Raya Pantai Berawa Gg Bisma No. 1  Canggu, Bali, Indonesia</strong></li>-->
-                        print '</ul>';
-                        print '<p><a href="#" class="btn btn-primary px-4 py-3">Add to Cart</a></p>';
+                            print '<h2>' .$data_test->result[0]->name. '</h2>';
+                            print '<p class="mb-5">' .$data_test->result[0]->description. '</p>';
+                            print '<ul class="property-list-details mb-5">';
+                                print '<li>Price: <strong class="text-black">Rp. ' .$data_test->result[0]->price. '</strong></li>';
+                                print '<li><strong>' .$data_test->status. '</strong></li>';
+                                // <!--<li>location: <strong>Jl. Raya Pantai Berawa Gg Bisma No. 1  Canggu, Bali, Indonesia</strong></li>-->
+                            print '</ul>';
+                            print '<p><a href="#" class="btn btn-primary px-4 py-3">Add to Cart</a></p>';
+                    } else {
+                        print '<h2>Sorry, it seems you were away for too long. Please go back to home page!</h2>';
+                    }
                     ?>
                 <!-- </div> -->
             </div>

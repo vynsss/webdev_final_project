@@ -37,10 +37,10 @@ class ProductController extends Controller
 
     public function show_category(Request $request){
         $stmt = DB::select('SELECT * FROM products WHERE status_id = 1 AND category_id = :id', [
-            'id' => $request->category_id
+            'id' => $request->input("category_id")
         ]);
 
-        echo json_encode(array("success" => true, "result" => $stmt));
+        echo json_encode(array("success" => true, "product" => $stmt));
     }
 
     public function insert(Request $request){
