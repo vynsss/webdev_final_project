@@ -25,7 +25,7 @@
 
                     $data = json_decode($product);
 
-                    foreach($data->product as $item) {
+                    foreach($data->result as $item) {
                         print '<div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="100">';
                         print '<a href="php/product.php?id='.$item->id.'"><img src="images/'.$item->image.'" alt="Image" class="img-fluid"></a>';
                         print '<div class="p-4 bg-white">';

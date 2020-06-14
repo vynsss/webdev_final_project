@@ -28,91 +28,57 @@
         </div>
     </div>
 
-
-
-
     <div class="container">
         <div class="featured-property d-flex">
             <div class="row justify-content-center"  >
-
                 <div class="col-md-13 col-lg-9 mb-5">
-
-
-
                     <form action="#" class="contact-form">
-
                         <p style="color: #fff">h</p>
 
-                        <h2>Carved Wooden Antique Balinese Dancers Head Decor</h2>
-                        <h5 style="color: #e3c4a8 ;text-align: left; text-indent: 20px">Rp 300,000</h5>
-                        <!--<h6 class="text-center">Unit(s)</h6>-->
+                        <?php
+                            $user_id = $_COOKIE["user_id"];
+                            $url = fopen("http://localhost:8000/api/carts?user_id={$user_id}", "r");
+                            $json = stream_get_contents($url);
+                            fclose($url);
+            
+            
+                            $data = json_decode($json);
+                            // print $data_europeana->product[0]->name;
+                            $order_id = $data->cart[0]->order_id;
+                            $status_id = $data->status;
+                            $total = 0;
+            
+                            foreach($data->cart as $item) {
+                                //to see the data of product
+                                $id = $item->id;
+                                $url2 = "https://product-service-fp.herokuapp.com/api/product?id={$id}";
+                                $test_datas2 = fopen($url2, "r");
+                                $json_test2 = stream_get_contents($test_datas2);
+                                fclose($test_datas2);
 
-                        <!--https://get.foundation/building-blocks/blocks/input-number-group.html-->
-                        <!--itu link di atas for the buttons ada js nya tpi ga ngerti-->
-                        <div class="input-group input-number-group">
-                            <div class="input-group-button">
-                                <!--<span class="input-number-decrement">-</span>-->
-                            </div>
-                            <h4 style="text-indent: 550px">Quantity :<span style="color: white">--</span></h4>
-                            <input class="input-number" type="number" value="1" min="1" max="1000">
-                            <a href="#" class="pl-0 pr-3" style="font-size: 25px;text-indent: 20px"><span class="icon-trash"></span></a>
-                        </div>
-                        <!--<p style="text-indent: 700px"> Remove <span><a href="#" class="pl-0 pr-3"><span class="icon-trash"></span></a></span></p>-->
-                        <hr>
+                                $data_test = json_decode($json_test2);
+                                
+                                print '<h2>' .$data_test->result[0]->name. '</h2>';
+                                print '<h5 style="color: #e3c4a8 ;text-align: left; text-indent: 20px">Rp ' .$data_test->result[0]->price. '</h5>';
 
-                        <h2>Medium Whitewashed Oval Wooden Bowl with Rattan Handles</h2>
-                        <h5 style="color: #e3c4a8 ;text-align: left; text-indent: 20px">Rp 300,000</h5>
-                        <!--<h6 class="text-center">Unit(s)</h6>-->
-
-                        <!--https://get.foundation/building-blocks/blocks/input-number-group.html-->
-                        <!--itu link di atas for the buttons ada js nya tpi ga ngerti-->
-                        <div class="input-group input-number-group">
-                            <div class="input-group-button">
-                                <!--<span class="input-number-decrement">-</span>-->
-                            </div>
-                            <h4 style="text-indent: 550px">Quantity :<span style="color: white">--</span></h4>
-                            <input class="input-number" type="number" value="1" min="1" max="1000">
-                            <a href="#" class="pl-0 pr-3" style="font-size: 25px;text-indent: 20px"><span class="icon-trash"></span></a>
-                        </div>
-                        <!--<p style="text-indent: 700px"> Remove <span><a href="#" class="pl-0 pr-3"><span class="icon-trash"></span></a></span></p>-->
-                        <hr>
-
-                        <h2>Round Tribal Wooden Face Decor</h2>
-                        <h5 style="color: #e3c4a8 ;text-align: left; text-indent: 20px">Rp 300,000</h5>
-                        <!--<h6 class="text-center">Unit(s)</h6>-->
-
-                        <!--https://get.foundation/building-blocks/blocks/input-number-group.html-->
-                        <!--itu link di atas for the buttons ada js nya tpi ga ngerti-->
-                        <div class="input-group input-number-group">
-                            <div class="input-group-button">
-                                <!--<span class="input-number-decrement">-</span>-->
-                            </div>
-                            <h4 style="text-indent: 550px">Quantity :<span style="color: white">--</span></h4>
-                            <input class="input-number" type="number" value="1" min="1" max="1000">
-                            <a href="#" class="pl-0 pr-3" style="font-size: 25px;text-indent: 20px"><span class="icon-trash"></span></a>
-                        </div>
-                        <!--<p style="text-indent: 700px"> Remove <span><a href="#" class="pl-0 pr-3"><span class="icon-trash"></span></a></span></p>-->
-                        <hr>
-
-                        <h2>Item Name</h2>
-                        <h5 style="color: #e3c4a8 ;text-align: left; text-indent: 20px">Rp 300,000</h5>
-                        <!--<h6 class="text-center">Unit(s)</h6>-->
-
-                        <!--https://get.foundation/building-blocks/blocks/input-number-group.html-->
-                        <!--itu link di atas for the buttons ada js nya tpi ga ngerti-->
-                        <div class="input-group input-number-group">
-                            <div class="input-group-button">
-                                <!--<span class="input-number-decrement">-</span>-->
-                            </div>
-                            <h4 style="text-indent: 550px">Quantity :<span style="color: white">--</span></h4>
-                            <input class="input-number" type="number" value="1" min="1" max="1000">
-                            <a href="#" class="pl-0 pr-3" style="font-size: 25px;text-indent: 20px"><span class="icon-trash"></span></a>
-                        </div>
-                        <!--<p style="text-indent: 700px"> Remove <span><a href="#" class="pl-0 pr-3"><span class="icon-trash"></span></a></span></p>-->
-                        <hr>
+                                // <!--https://get.foundation/building-blocks/blocks/input-number-group.html-->
+                                // <!--itu link di atas for the buttons ada js nya tpi ga ngerti-->
+                                print '<div class="input-group input-number-group">';
+                                    print '<div class="input-group-button">';
+                                        // <!--<span class="input-number-decrement">-</span>-->
+                                    print '</div>';
+                                    print '<h4 style="text-indent: 550px">Quantity : ' .$item->quantity. '<span style="color: white">--</span></h4>';
+                                    // print '<input class="input-number" type="number" value="1" min="1" max="1000">';
+                                    print '<a href="#" class="pl-0 pr-3" style="font-size: 25px;text-indent: 20px"><span class="icon-trash"></span></a>';
+                                    print '</div>';
+                                print '<hr>';
 
 
-                        <h4 style="text-align: right">Total : <span>4,000,000</span></h4>
+                            }                                
+                            $total = $total + ($data_test->result[0]->price*$item->quantity);
+                            print '<h4 style="text-align: right">Total : <span>Rp. ' .$total. '</span></h4>';
+                        ?>
+
                         <div class="row form-group">
                         <div class="col-md-12">
                         <input type="submit" value="Check Out" class="btn btn-primary py-3 px-4">

@@ -40,7 +40,7 @@ class ProductController extends Controller
             'id' => $request->input("category_id")
         ]);
 
-        echo json_encode(array("success" => true, "product" => $stmt));
+        echo json_encode(array("success" => true, "result" => $stmt));
     }
 
     public function insert(Request $request){

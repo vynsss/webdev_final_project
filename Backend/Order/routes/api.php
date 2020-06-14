@@ -23,6 +23,7 @@ Route::get('/carts', 'CartController@show');
 Route::get('/carts/all', 'CartController@show_all');    //to check only might
 Route::get('/statuses', 'StatusController@show');
 Route::get('/orders', 'OrderController@show');
+Route::get('/order', 'OrderController@show_available');
 
 //carts
 Route::post('/carts/create', 'CartController@add');

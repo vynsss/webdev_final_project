@@ -13,6 +13,7 @@ class CartController extends Controller
     public function show_all(){
         $stmt = Cart::All();
         echo json_encode(array(
+            "success" => true,
             "cart" => $stmt
         ));
     }
@@ -20,7 +21,10 @@ class CartController extends Controller
     public function show(Request $request){
         $user = $request->input('user_id');
         $stmt = Cart::All()->where('user_id', $user)->where('status_id', 1);
+        $status = DB::table('statuses')->where('id', $stmt[0]->status_id)->first();
         echo json_encode(array(
+            "success" => true,
+            "status" => $status->name,
             "cart" => $stmt
         ));
     }

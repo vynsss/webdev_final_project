@@ -19,136 +19,23 @@
     <div class="site-section">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="100">
-                    <a href="about_us.php"><img src="images/img_4.jpg" alt="Image" class="img-fluid"></a>
-                    <div class="p-4 bg-white">
-                        <span class="d-block text-secondary small text-uppercase">Rp 300,000.00</span>
-                        <h2 class="h5 text-black mb-3"><a href="about_us.php">Tall White Wooden Candle Holders</a></h2>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="200">
-                    <a href="about_us.php"><img src="images/img_2.jpg" alt="Image" class="img-fluid"></a>
-                    <div class="p-4 bg-white">
-                        <span class="d-block text-secondary small text-uppercase">Rp 1,250,000.00</span>
-                        <h2 class="h5 text-black mb-3"><a href="about_us.php">Carved Wooden Antique Balinese Dancers Head Decor</a></h2>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="300">
-                    <a href="about_us.php"><img src="images/img_3.jpg" alt="Image" class="img-fluid"></a>
-                    <div class="p-4 bg-white">
-                        <span class="d-block text-secondary small text-uppercase">Rp 750,000.00</span>
-                        <h2 class="h5 text-black mb-3"><a href="about_us.php">Natural Teak Noodle Bowls With Chop Sticks</a></h2>
-                    </div>
-                </div>
+                <?php
+                    $products = fopen("https://product-service-fp.herokuapp.com/api/products/category?category_id=6", "r");
+                    $product = stream_get_contents($products);
+                    fclose($products);
 
-                <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="100">
-                    <a href="about_us.php"><img src="images/img_2.jpg" alt="Image" class="img-fluid"></a>
-                    <div class="p-4 bg-white">
-                        <span class="d-block text-secondary small text-uppercase">Rp 300,000.00</span>
-                        <h2 class="h5 text-black mb-3"><a href="about_us.php">Medium Whitewashed Oval Wooden Bowl with Rattan Handles</a></h2>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="200">
-                    <a href="about_us.php"><img src="images/img_3.jpg" alt="Image" class="img-fluid"></a>
-                    <div class="p-4 bg-white">
-                        <span class="d-block text-secondary small text-uppercase">Rp 250,000.00</span>
-                        <h2 class="h5 text-black mb-3"><a href="about_us.php">Round Tribal Wooden Face Decor</a></h2>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="300">
-                    <a href="about_us.php"><img src="images/img_4.jpg" alt="Image" class="img-fluid"></a>
-                    <div class="p-4 bg-white">
-                        <span class="d-block text-secondary small text-uppercase">Rp 175,000.00</span>
-                        <h2 class="h5 text-black mb-3"><a href="about_us.php">Large Carved Tribal Wooden Bowl With Lid</a></h2>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="100">
-                    <a href="about_us.php"><img src="images/img_4.jpg" alt="Image" class="img-fluid"></a>
-                    <div class="p-4 bg-white">
-                        <span class="d-block text-secondary small text-uppercase">Rp 300,000.00</span>
-                        <h2 class="h5 text-black mb-3"><a href="about_us.php">Tall White Wooden Candle Holders</a></h2>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="200">
-                    <a href="about_us.php"><img src="images/img_2.jpg" alt="Image" class="img-fluid"></a>
-                    <div class="p-4 bg-white">
-                        <span class="d-block text-secondary small text-uppercase">Rp 1,250,000.00</span>
-                        <h2 class="h5 text-black mb-3"><a href="about_us.php">Carved Wooden Antique Balinese Dancers Head Decor</a></h2>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="300">
-                    <a href="about_us.php"><img src="images/img_3.jpg" alt="Image" class="img-fluid"></a>
-                    <div class="p-4 bg-white">
-                        <span class="d-block text-secondary small text-uppercase">Rp 750,000.00</span>
-                        <h2 class="h5 text-black mb-3"><a href="about_us.php">Natural Teak Noodle Bowls With Chop Sticks</a></h2>
-                    </div>
-                </div>
+                    $data = json_decode($product);
 
-                <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="100">
-                    <a href="about_us.php"><img src="images/img_2.jpg" alt="Image" class="img-fluid"></a>
-                    <div class="p-4 bg-white">
-                        <span class="d-block text-secondary small text-uppercase">Rp 300,000.00</span>
-                        <h2 class="h5 text-black mb-3"><a href="about_us.php">Medium Whitewashed Oval Wooden Bowl with Rattan Handles</a></h2>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="200">
-                    <a href="about_us.php"><img src="images/img_3.jpg" alt="Image" class="img-fluid"></a>
-                    <div class="p-4 bg-white">
-                        <span class="d-block text-secondary small text-uppercase">Rp 250,000.00</span>
-                        <h2 class="h5 text-black mb-3"><a href="about_us.php">Round Tribal Wooden Face Decor</a></h2>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="300">
-                    <a href="about_us.php"><img src="images/img_4.jpg" alt="Image" class="img-fluid"></a>
-                    <div class="p-4 bg-white">
-                        <span class="d-block text-secondary small text-uppercase">Rp 175,000.00</span>
-                        <h2 class="h5 text-black mb-3"><a href="about_us.php">Large Carved Tribal Wooden Bowl With Lid</a></h2>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="100">
-                    <a href="about_us.php"><img src="images/img_4.jpg" alt="Image" class="img-fluid"></a>
-                    <div class="p-4 bg-white">
-                        <span class="d-block text-secondary small text-uppercase">Rp 300,000.00</span>
-                        <h2 class="h5 text-black mb-3"><a href="about_us.php">Tall White Wooden Candle Holders</a></h2>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="200">
-                    <a href="about_us.php"><img src="images/img_2.jpg" alt="Image" class="img-fluid"></a>
-                    <div class="p-4 bg-white">
-                        <span class="d-block text-secondary small text-uppercase">Rp 1,250,000.00</span>
-                        <h2 class="h5 text-black mb-3"><a href="about_us.php">Carved Wooden Antique Balinese Dancers Head Decor</a></h2>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="300">
-                    <a href="about_us.php"><img src="images/img_3.jpg" alt="Image" class="img-fluid"></a>
-                    <div class="p-4 bg-white">
-                        <span class="d-block text-secondary small text-uppercase">Rp 750,000.00</span>
-                        <h2 class="h5 text-black mb-3"><a href="about_us.php">Natural Teak Noodle Bowls With Chop Sticks</a></h2>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="100">
-                    <a href="about_us.php"><img src="images/img_2.jpg" alt="Image" class="img-fluid"></a>
-                    <div class="p-4 bg-white">
-                        <span class="d-block text-secondary small text-uppercase">Rp 300,000.00</span>
-                        <h2 class="h5 text-black mb-3"><a href="about_us.php">Medium Whitewashed Oval Wooden Bowl with Rattan Handles</a></h2>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="200">
-                    <a href="about_us.php"><img src="images/img_3.jpg" alt="Image" class="img-fluid"></a>
-                    <div class="p-4 bg-white">
-                        <span class="d-block text-secondary small text-uppercase">Rp 250,000.00</span>
-                        <h2 class="h5 text-black mb-3"><a href="about_us.php">Round Tribal Wooden Face Decor</a></h2>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="300">
-                    <a href="about_us.php"><img src="images/img_4.jpg" alt="Image" class="img-fluid"></a>
-                    <div class="p-4 bg-white">
-                        <span class="d-block text-secondary small text-uppercase">Rp 175,000.00</span>
-                        <h2 class="h5 text-black mb-3"><a href="about_us.php">Large Carved Tribal Wooden Bowl With Lid</a></h2>
-                    </div>
-                </div>
-
+                    foreach($data->result as $item) {
+                        print '<div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="100">';
+                        print '<a href="php/product.php?id='.$item->id.'"><img src="images/'.$item->image.'" alt="Image" class="img-fluid"></a>';
+                        print '<div class="p-4 bg-white">';
+                        print '<span class="d-block text-secondary small text-uppercase">Rp'. $item->price .'</span>';
+                        print '<h2 class="h5 text-black mb-3"><a href="about_us.php">'. $item->name .'</a></h2>';
+                        print '</div>';
+                        print '</div>';
+                    }
+                ?>	
             </div>
 
         </div>

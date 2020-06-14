@@ -10,22 +10,20 @@ use Illuminate\Support\Facades\DB;
 class OrderController extends Controller
 {
 
-    //automatically add an empty order if user dont have one,, need to check for functionallity
-    public function check_available($user){
-        $check = DB::table('orders')->where('user_id', $user)->where('status_id', 1)->count();
-
-        if($check > 0){
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
-
     public function show(Request $request){
         $user = $request->input('user_id');
         $stmt = Order::All()->where('user_id', $user);
         echo json_encode(array(
+            'success' => true,
+            'order' => $stmt
+        ));
+    }
+
+    public function show_available(Request $request){
+        $user = $request->input('user_id');
+        $stmt = Order::All()->where('user_id', $user)->where('status_id', 1);
+        echo json_encode(array(
+            'success' => true,
             'order' => $stmt
         ));
     }
