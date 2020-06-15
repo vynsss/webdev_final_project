@@ -72,8 +72,6 @@
                                     print '<a href="#" class="pl-0 pr-3" style="font-size: 25px;text-indent: 20px"><span class="icon-trash"></span></a>';
                                     print '</div>';
                                 print '<hr>';
-
-
                             }                                
                             $total = $total + ($data_test->result[0]->price*$item->quantity);
                             print '<h4 style="text-align: right">Total : <span>Rp. ' .$total. '</span></h4>';

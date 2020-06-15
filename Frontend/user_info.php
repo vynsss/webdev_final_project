@@ -1,6 +1,5 @@
 <?php
     include 'include/navbar.php';
-    // include 'php/user.php';
 ?>
 
 <style>
@@ -33,34 +32,12 @@
 
     <div class="site-section">
         <div class="container" data-aos="fade-up">
-            <!--<div class="row">-->
-                <!--<div class="site-section-heading text-center mb-5 w-border col-md-6 mx-auto">-->
-                    <!--<h2 class="mb-5">All Categories</h2>-->
-                    <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, fugit nam obcaecati fuga itaque deserunt-->
-                        <!--officia, error reiciendis ab quod?</p>-->
-                <!--</div>-->
-            <!--</div>-->
             <div class="row" >
-                <!-- <a href="home_wares.html"><div class="col-md-6 col-lg-12 mb-5 mb-lg-5" > -->
+                <div class="col-md-6 col-lg-12 mb-5 mb-lg-5" >
                     <div class="team-member" style="width:250px;height:250px;">
-
                         <img src="images/person_1.jpg" alt="Image" class="img-fluid" >
-
-                        <!-- <div class="text" style="text-align: center"> -->
-
-                            <!--this <p></p> itu biar edit picture nya di middle cos gbisa idk why-->
-                            <!-- <p class="mb-4" style="color: rgba(51, 51, 51,0.1)">Lorem ipsum dolor sit amet consectetur adipisicing</p>
-                            <h2 class="mb-2 font-weight-light h2" style="text-align: center">Edit Picture</h2> -->
-                            <!--<span class="d-block mb-2 text-white">Decor Items, Decor Materials, Sculptures, Ethnic & Tribal</span>-->
-                            <!--<p class="mb-4" style="color: rgba(51, 51, 51,0.1)">Lorem ipsum dolor sit amet consectetur adipisicing elit ullam reprehenderit nemo.</p>-->
-                            <!-- <p>
-                                <a class="text-white p-2"></a>
-                                <a class="text-white p-2"></a>
-                                <a class="text-white p-2"></a>
-                            </p>
-                        </div> -->
-
                     </div>
+
                     <?php
                         if(isset($_COOKIE["user_id"])){
                             $id = $_COOKIE["user_id"];
@@ -80,15 +57,13 @@
                             print '<h4 style="text-indent: 70px">Email: <span style="text-indent: 20px;color: #e3c4a8">' .$data_test->email. '</span></h4>';
                             print '<h4 style="text-indent: 70px">Address: <span style="text-indent: 20px;color: #e3c4a8">' .$data_test->address. '</span></h4>';
                         } else{
-                            print '<h1>It seems you were away for too long.<br> Please login again!</h1>';
+                            print '<h1 class="mb-3" style="text-indent: 50px">It seems you were away for too long.<br> Please login again!</h1>';
                         }
                     ?>
 
                     
                 </div>
-                <!-- </a> -->
 
-              
             </div>
         </div>
     </div>
@@ -108,25 +83,24 @@
                         <h1 style="text-align: center">History</h1>
                         <hr>
 
-                        <h2>Order : #<span style="color: #e3c4a8"><a href="#">323</a></span> </h2>
-                        <p>23/05/2018</p>
-                        <hr>
-
-                        <h2>Order : #<span style="color: #e3c4a8"><a href="#">369</a></span> </h2>
-                        <p>23/05/2018</p>
-                        <hr>
-
-                        <h2>Order : #<span style="color: #e3c4a8"><a href="#">398</a></span> </h2>
-                        <p>23/05/2018</p>
-                        <hr>
-
-                        <h2>Order : #<span style="color: #e3c4a8"><a href="#">401</a></span> </h2>
-                        <p>23/05/2018</p>
-                        <hr>
-
-                        <h2>Order : #<span style="color: #e3c4a8"><a href="#">422</a></span> </h2>
-                        <p>23/05/2018</p>
-                        <hr>
+                        <?php 
+                            if(isset($_COOKIE["user_id"])){
+                                $user_id = $_COOKIE["user_id"];
+                                $url = fopen("http://localhost:8000/api/orders?user_id={$user_id}", "r");
+                                $json = stream_get_contents($url);
+                                fclose($url);
+                
+                
+                                $data = json_decode($json);
+                                // print $data_europeana->product[0]->name;
+                
+                                foreach($data->order as $item) {
+                                    print '<h2>Order : #<span style="color: #e3c4a8"><a href="#">' .$item->id. '</a></span> </h2>';
+                                    print '<p>' .$item->date. '</p>';
+                                    print '<hr>';
+                                }
+                            }
+                        ?>
 
                     </form>
                 </div>
