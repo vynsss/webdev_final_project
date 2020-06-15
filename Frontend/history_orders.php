@@ -30,160 +30,50 @@
         </div>
     </div>
 
-    <!--<div class="site-section">-->
-        <!--<div class="container" data-aos="fade-up">-->
-            <!--&lt;!&ndash;<div class="row">&ndash;&gt;-->
-            <!--&lt;!&ndash;<div class="site-section-heading text-center mb-5 w-border col-md-6 mx-auto">&ndash;&gt;-->
-            <!--&lt;!&ndash;<h2 class="mb-5">All Categories</h2>&ndash;&gt;-->
-            <!--&lt;!&ndash;<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, fugit nam obcaecati fuga itaque deserunt&ndash;&gt;-->
-            <!--&lt;!&ndash;officia, error reiciendis ab quod?</p>&ndash;&gt;-->
-            <!--&lt;!&ndash;</div>&ndash;&gt;-->
-            <!--&lt;!&ndash;</div>&ndash;&gt;-->
-            <!--<div class="row" >-->
-                <!--<a href="home_wares.html"><div class="col-md-6 col-lg-12 mb-5 mb-lg-5" >-->
-                    <!--<div class="team-member" style="width:250px;height:250px;">-->
-
-                        <!--<img src="images/person_1.jpg" alt="Image" class="img-fluid" >-->
-
-                        <!--<div class="text" style="text-align: center">-->
-
-                            <!--&lt;!&ndash;this <p></p> itu biar edit picture nya di middle cos gbisa idk why&ndash;&gt;-->
-                            <!--<p class="mb-4" style="color: rgba(51, 51, 51,0.1)">Lorem ipsum dolor sit amet consectetur adipisicing</p>-->
-                            <!--<h2 class="mb-2 font-weight-light h2" style="text-align: center">Edit Picture</h2>-->
-                            <!--&lt;!&ndash;<span class="d-block mb-2 text-white">Decor Items, Decor Materials, Sculptures, Ethnic & Tribal</span>&ndash;&gt;-->
-                            <!--&lt;!&ndash;<p class="mb-4" style="color: rgba(51, 51, 51,0.1)">Lorem ipsum dolor sit amet consectetur adipisicing elit ullam reprehenderit nemo.</p>&ndash;&gt;-->
-                            <!--<p>-->
-                                <!--<a class="text-white p-2"></a>-->
-                                <!--<a class="text-white p-2"></a>-->
-                                <!--<a class="text-white p-2"></a>-->
-                            <!--</p>-->
-                        <!--</div>-->
-
-                    <!--</div>-->
-                    <!--<p style="color: white;text-indent: 500px">lorem</p>-->
-                    <!--<h1 class="mb-3" style="text-indent: 50px">Vicky Vanessa<span><a href="#" class="pl-0 pr-3"><span class="icon-settings" ></span></a></span></h1>-->
-                    <!--<h4 style="text-indent: 70px">Username: <span style="text-indent: 20px;color: #e3c4a8">@v.vkyyyy</span></h4>-->
-                    <!--<h4 style="text-indent: 70px">Email: <span style="text-indent: 20px;color: #e3c4a8">Vicky_vanessa@gmail.com</span></h4>-->
-                    <!--<h4 style="text-indent: 70px">Address: <span style="text-indent: 20px;color: #e3c4a8">Komplek Jembatan 2, Jalan Arwana 1, No.4A</span></h4>-->
-
-
-
-                <!--</div>-->
-                <!--</a>-->
-
-
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
 
     <div class="container">
         <div class="featured-property d-flex">
             <div class="row justify-content-center"  >
-
                 <div class="col-md-13 col-lg-9 mb-5">
-
-
-
                     <form action="#" class="contact-form">
 
                         <p style="color: #fff">h</p>
 
-                        <h1 style="text-align: center">Order : #<span style="color: #e3c4a8">323</span> </h1>
-                        <h3 style="text-align: right">Status</h3>
-                        <p style="text-align: right">26/05/2019</p>
-                        <hr>
+                        <?php
+                            if(isset($_COOKIE["user_id"])){
+                                //for order
+                                $id = $_SESSION["order"];
+                                $user_id = $_COOKIE["user_id"];
+                                $url = fopen("http://localhost:8000/api/order/id?id={$id}&user_id={$user_id}", "r");
+                                $json = stream_get_contents($url);
+                                fclose($url);
+                
+                                $data = json_decode($json);
+                                // print $data_europeana->product[0]->name;
 
-                        <!--ini klo u mau dia bisa ke page items nya-->
-                        <h2 class="mb-3"><span><a href="#">Fried Chicken</a></span></h2>
-                        <p style="text-align: right">Quantity :<span style="text-indent: 20px">3</span></p>
-                        <p style="text-align: right">Total Price :<span style="text-indent: 20px">30,000</span></p>
-                        <hr>
+                                print '<h1 style="text-align: center">Order : #<span style="color: #e3c4a8">' .$_SESSION["order"]. '</span> </h1>';
+                                print '<h3 style="text-align: right">' .$data->status. '</h3>';
+                                print '<p style="text-align: right">' .$data->date. '</p>';
+                                print '<hr>';
+                                
+                                foreach($data->order as $item) {
+                                    $product_id = $item->product_id;
+                                    $url2 = "https://product-service-fp.herokuapp.com/api/product?id={$product_id}";
+                                    $test_datas2 = fopen($url2, "r");
+                                    $json_test2 = stream_get_contents($test_datas2);
+                                    fclose($test_datas2);
 
-                        <h2 class="mb-3">Fried Chicken</h2>
-                        <p style="text-align: right">Quantity :<span style="text-indent: 20px">3</span></p>
-                        <p style="text-align: right">Total Price :<span style="text-indent: 20px">30,000</span></p>
-                        <hr>
+                                    $data_test = json_decode($json_test2);
 
-                        <h2 class="mb-3">Fried Chicken</h2>
-                        <p style="text-align: right">Quantity :<span style="text-indent: 20px">3</span></p>
-                        <p style="text-align: right">Total Price :<span style="text-indent: 20px">30,000</span></p>
-                        <hr>
-
-                        <h2 class="mb-3">Fried Chicken</h2>
-                        <p style="text-align: right">Quantity :<span style="text-indent: 20px">3</span></p>
-                        <p style="text-align: right">Total Price :<span style="text-indent: 20px">30,000</span></p>
-                        <hr>
-
-                        <h2 class="mb-3">Fried Chicken</h2>
-                        <p style="text-align: right">Quantity :<span style="text-indent: 20px">3</span></p>
-                        <p style="text-align: right">Total Price :<span style="text-indent: 20px">30,000</span></p>
-                        <hr>
-
-
-                        <!--<h2>Medium Whitewashed Oval Wooden Bowl with Rattan Handles</h2>-->
-                        <!--<h5 style="color: #e3c4a8 ;text-align: left; text-indent: 20px">Rp 300,000</h5>-->
-                        <!--&lt;!&ndash;<h6 class="text-center">Unit(s)</h6>&ndash;&gt;-->
-
-                        <!--&lt;!&ndash;https://get.foundation/building-blocks/blocks/input-number-group.html&ndash;&gt;-->
-                        <!--&lt;!&ndash;itu link di atas for the buttons ada js nya tpi ga ngerti&ndash;&gt;-->
-                        <!--<div class="input-group input-number-group">-->
-                        <!--<div class="input-group-button">-->
-                        <!--&lt;!&ndash;<span class="input-number-decrement">-</span>&ndash;&gt;-->
-                        <!--</div>-->
-                        <!--<h3>Quantity :<span style="color: white">&#45;&#45;</span></h3>-->
-                        <!--<input class="input-number" type="number" value="1" min="1" max="1000">-->
-                        <!--<div class="input-group-button">-->
-                        <!--&lt;!&ndash;<span class="input-number-increment">+</span>&ndash;&gt;-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--<p style="text-indent: 20px"> Remove <span><a href="#" class="pl-0 pr-3"><span class="icon-trash"></span></a></span></p>-->
-                        <!--<hr>-->
-
-                        <!--<h2>Round Tribal Wooden Face Decor</h2>-->
-                        <!--<h5 style="color: #e3c4a8 ;text-align: left; text-indent: 20px">Rp 300,000</h5>-->
-                        <!--&lt;!&ndash;<h6 class="text-center">Unit(s)</h6>&ndash;&gt;-->
-
-                        <!--&lt;!&ndash;https://get.foundation/building-blocks/blocks/input-number-group.html&ndash;&gt;-->
-                        <!--&lt;!&ndash;itu link di atas for the buttons ada js nya tpi ga ngerti&ndash;&gt;-->
-                        <!--<div class="input-group input-number-group">-->
-                        <!--<div class="input-group-button">-->
-                        <!--&lt;!&ndash;<span class="input-number-decrement">-</span>&ndash;&gt;-->
-                        <!--</div>-->
-                        <!--<h3>Quantity :<span style="color: white">&#45;&#45;</span></h3>-->
-                        <!--<input class="input-number" type="number" value="1" min="1" max="1000">-->
-                        <!--<div class="input-group-button">-->
-                        <!--&lt;!&ndash;<span class="input-number-increment">+</span>&ndash;&gt;-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--<p style="text-indent: 20px"> Remove <span><a href="#" class="pl-0 pr-3"><span class="icon-trash"></span></a></span></p>-->
-                        <!--<hr>-->
-
-                        <!--<h2>Item Name</h2>-->
-                        <!--<h5 style="color: #e3c4a8 ;text-align: left; text-indent: 20px">Rp 300,000</h5>-->
-                        <!--&lt;!&ndash;<h6 class="text-center">Unit(s)</h6>&ndash;&gt;-->
-
-                        <!--&lt;!&ndash;https://get.foundation/building-blocks/blocks/input-number-group.html&ndash;&gt;-->
-                        <!--&lt;!&ndash;itu link di atas for the buttons ada js nya tpi ga ngerti&ndash;&gt;-->
-                        <!--<div class="input-group input-number-group">-->
-                        <!--<div class="input-group-button">-->
-                        <!--&lt;!&ndash;<span class="input-number-decrement">-</span>&ndash;&gt;-->
-                        <!--</div>-->
-                        <!--<h3>Quantity :<span style="color: white">&#45;&#45;</span></h3>-->
-                        <!--<input class="input-number" type="number" value="1" min="1" max="1000">-->
-                        <!--<div class="input-group-button">-->
-                        <!--&lt;!&ndash;<span class="input-number-increment">+</span>&ndash;&gt;-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--<p style="text-indent: 20px"> Remove <span><a href="#" class="pl-0 pr-3"><span class="icon-trash"></span></a></span></p>-->
-                        <!--<hr>-->
-
-
-                        <!--<h4 style="text-align: right">Total : <span>4,000,000</span></h4>-->
-                        <!--<div class="row form-group">-->
-                        <!--<div class="col-md-12">-->
-                        <!--<input type="submit" value="Check Out" class="btn btn-primary py-3 px-4">-->
-                        <!--</div>-->
-                        <!--</div>-->
+                                    print '<h2 class="mb-3">' .$data_test->result[0]->name. '</h2>';
+                                    print '<p style="text-align: right">Quantity :<span style="text-indent: 20px">' .$item->quantity. '</span></p>';
+                                    print '<p style="text-align: right">Total Price :<span style="text-indent: 20px">Rp. ' .$data_test->result[0]->price*$item->quantity. '</span></p>';
+                                    print '<hr>';
+                                }
+                            } else{
+                                print'<h2 class="mb-3">It seems you were away for too long! Please login again.</h2>';
+                            }
+                        ?>
 
                     </form>
                 </div>

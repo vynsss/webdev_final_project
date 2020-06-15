@@ -95,7 +95,7 @@
                                 // print $data_europeana->product[0]->name;
                 
                                 foreach($data->order as $item) {
-                                    print '<h2>Order : #<span style="color: #e3c4a8"><a href="#">' .$item->id. '</a></span> </h2>';
+                                    print '<h2>Order : #<span style="color: #e3c4a8"><a href="php/order.php?id='.$item->id.'">' .$item->id. '</a></span> </h2>';
                                     print '<p>' .$item->date. '</p>';
                                     print '<hr>';
                                 }

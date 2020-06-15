@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Cart;
 use App\Order;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -26,6 +27,21 @@ class OrderController extends Controller
             'success' => true,
             'order' => $stmt
         ));
+    }
+
+    public function show_indiv(Request $request){
+        $id = $request->input('id');
+        $user = $request->input('user_id');
+        $order = Order::All()->where('id', $id)->first();
+        $status = DB::table('statuses')->where('id', $order->status_id)->first();
+
+        $stmt  = Cart::All()->where('order_id', $id)->where('user_id', $user);
+        echo json_encode([
+            "success" => true,
+            "status"=> $status->name,
+            "date" => $order->date,
+            "order" => $stmt
+        ]);
     }
 
     public function show_all(){
