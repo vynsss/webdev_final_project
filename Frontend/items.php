@@ -44,7 +44,18 @@
                                 print '<li><strong>' .$data_test->status. '</strong></li>';
                                 // <!--<li>location: <strong>Jl. Raya Pantai Berawa Gg Bisma No. 1  Canggu, Bali, Indonesia</strong></li>-->
                             print '</ul>';
-                            print '<p><a href="#" class="btn btn-primary px-4 py-3">Add to Cart</a></p>';
+
+                            print '<iframe name="hiddenFrame" width="0" height="0" border="0" style="display: none;"></iframe>';
+                            print '<form action="http://localhost:8000/api/carts/create" method="POST" name="add_cart" target="hiddenFrame">';
+                                print '<label class="font-weight-bold" for="quantity">Quantity</label>';
+                                print '<input name="quantity" id="quantity" class="input-number" type="number" value="1" min="1" max="1000">';
+                                print '<input type="hidden" name="product_id" id="product_id" value="' .$id. '">';
+                                print '<input type="hidden" name="user_id" id="user_id" value="' .$_COOKIE["user_id"]. '">';
+
+                                // print '<p><a href="#" class="btn btn-primary px-4 py-3">Add to Cart</a></p>';
+                                print '<p></p>';
+                                print '<input type="submit" id="add_button" value="Add to Cart" class="btn btn-primary py-3 px-4">';
+                            print '</form>';
                     } else {
                         print '<h2>Sorry, it seems you were away for too long. Please go back to home page!</h2>';
                     }
@@ -55,6 +66,12 @@
     </div>
 
     <p style="color: white">h</p>
+
+    <script>
+        document.getElementById("add_button").onclick = function () {
+            location.href = "https://balibebek.live/items.php";
+        };
+    </script>
 
 <?php
     include 'include/footer.php';
