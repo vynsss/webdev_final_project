@@ -68,7 +68,7 @@ class CartController extends Controller
         $stmt = Cart::find($id)->delete();
 
         echo json_encode(array(
-            'success' => true,
+            'success' => $stmt,
             'message' => 'cart successfully removed'
         ));
     }

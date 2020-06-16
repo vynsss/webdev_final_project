@@ -36,50 +36,57 @@
                         <p style="color: #fff">h</p>
 
                         <?php
-                            $user_id = $_COOKIE["user_id"];
-                            $url = fopen("http://localhost:8000/api/carts?user_id={$user_id}", "r");
-                            $json = stream_get_contents($url);
-                            fclose($url);
-            
-            
-                            $data = json_decode($json);
-                            // print $data_europeana->product[0]->name;
-                            $order_id = $data->cart[0]->order_id;
-                            $status_id = $data->status;
-                            $total = 0;
-            
-                            foreach($data->cart as $item) {
-                                //to see the data of product
-                                $id = $item->id;
-                                $url2 = "https://product-service-fp.herokuapp.com/api/product?id={$id}";
-                                $test_datas2 = fopen($url2, "r");
-                                $json_test2 = stream_get_contents($test_datas2);
-                                fclose($test_datas2);
+                            if(isset($_COOKIE["user_id"])){
+                                $user_id = $_COOKIE["user_id"];
+                                $url = fopen("http://localhost:8000/api/carts?user_id={$user_id}", "r");
+                                $json = stream_get_contents($url);
+                                fclose($url);
+                
+                
+                                $data = json_decode($json);
+                                // print $data_europeana->product[0]->name;
+                                $order_id = $data->cart[0]->order_id;
+                                $status_id = $data->status;
+                                $total = 0;
+                
+                                foreach($data->cart as $item) {
+                                    //to see the data of product
+                                    $id = $item->id;
+                                    $url2 = "https://product-service-fp.herokuapp.com/api/product?id={$id}";
+                                    $test_datas2 = fopen($url2, "r");
+                                    $json_test2 = stream_get_contents($test_datas2);
+                                    fclose($test_datas2);
 
-                                $data_test = json_decode($json_test2);
+                                    $data_test = json_decode($json_test2);
+                                    
+                                    print '<h2>' .$data_test->result[0]->name. '</h2>';
+                                    print '<h5 style="color: #e3c4a8 ;text-align: left; text-indent: 20px">Rp ' .$data_test->result[0]->price. '</h5>';
+
+                                    // <!--https://get.foundation/building-blocks/blocks/input-number-group.html-->
+                                    // <!--itu link di atas for the buttons ada js nya tpi ga ngerti-->
+                                    print '<div class="input-group input-number-group">';
+                                        print '<div class="input-group-button">';
+                                            // <!--<span class="input-number-decrement">-</span>-->
+                                        print '</div>';
+                                        print '<h4 style="text-indent: 550px">Quantity : ' .$item->quantity. '<span style="color: white">--</span></h4>';
+                                        // print '<input class="input-number" type="number" value="1" min="1" max="1000">';
+                                        // $id = $item->id;
+                                        print '<a href="php/delete_cart.php?id='.$item->id.'" class="pl-0 pr-3" style="font-size: 25px;text-indent: 20px"><span class="icon-trash"></span></a>';
+                                        print '</div>';
+                                    print '<hr>';
+                                    $total = $total + ($data_test->result[0]->price*$item->quantity);
+                                }                                
+                                print '<h4 style="text-align: right">Total : <span>Rp. ' .$total. '</span></h4>';                   
                                 
-                                print '<h2>' .$data_test->result[0]->name. '</h2>';
-                                print '<h5 style="color: #e3c4a8 ;text-align: left; text-indent: 20px">Rp ' .$data_test->result[0]->price. '</h5>';
-
-                                // <!--https://get.foundation/building-blocks/blocks/input-number-group.html-->
-                                // <!--itu link di atas for the buttons ada js nya tpi ga ngerti-->
-                                print '<div class="input-group input-number-group">';
-                                    print '<div class="input-group-button">';
-                                        // <!--<span class="input-number-decrement">-</span>-->
-                                    print '</div>';
-                                    print '<h4 style="text-indent: 550px">Quantity : ' .$item->quantity. '<span style="color: white">--</span></h4>';
-                                    // print '<input class="input-number" type="number" value="1" min="1" max="1000">';
-                                    print '<a href="#" class="pl-0 pr-3" style="font-size: 25px;text-indent: 20px"><span class="icon-trash"></span></a>';
-                                    print '</div>';
-                                print '<hr>';
-                            }                                
-                            $total = $total + ($data_test->result[0]->price*$item->quantity);
-                            print '<h4 style="text-align: right">Total : <span>Rp. ' .$total. '</span></h4>';
+                                print '<div class="row form-group">';
+                                print '<div class="col-md-12">';
+                                print '<input type="submit" value="Check Out" class="btn btn-primary py-3 px-4">';
+                            } else{
+                                print '<h4>It seems you were away for too long! Please login again.</h4>';
+                            }
                         ?>
 
-                        <div class="row form-group">
-                        <div class="col-md-12">
-                        <input type="submit" value="Check Out" class="btn btn-primary py-3 px-4">
+     
                         </div>
                         </div>
 

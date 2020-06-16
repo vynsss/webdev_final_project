@@ -97,7 +97,7 @@
                     document.cookie = "user_id" + "=" + id + ";" + expires + ";path=/";
                     document.cookie = "username" + "=" + username + ";" + expires + ";path=/";
                     console.log("successful?")
-                    location.href = "https://frontend-fp.herokuapp.com";
+                    location.href = "https://balibebek.live";
                 }
                 else{
                     alert("Wrong username or password, please retry!");

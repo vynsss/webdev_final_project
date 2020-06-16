@@ -30,6 +30,7 @@ Route::get('/order/id', 'OrderController@show_indiv');
 //carts
 Route::post('/carts/create', 'CartController@add');
 Route::put('/carts/update', 'CartController@update_status');
+Route::delete('/carts/remove', 'CartController@remove');
 
 //order
 Route::post('/orders/create', 'OrderController@add');
