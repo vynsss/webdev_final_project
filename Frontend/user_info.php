@@ -86,7 +86,7 @@
                         <?php 
                             if(isset($_COOKIE["user_id"])){
                                 $user_id = $_COOKIE["user_id"];
-                                $url = fopen("http://localhost:8000/api/orders?user_id={$user_id}", "r");
+                                $url = fopen("https://order-service-fp.herokuapp.com/api/orders?user_id={$user_id}", "r");
                                 $json = stream_get_contents($url);
                                 fclose($url);
                 

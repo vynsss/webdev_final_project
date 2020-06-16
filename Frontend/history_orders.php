@@ -44,7 +44,7 @@
                                 //for order
                                 $id = $_SESSION["order"];
                                 $user_id = $_COOKIE["user_id"];
-                                $url = fopen("http://localhost:8000/api/order/id?id={$id}&user_id={$user_id}", "r");
+                                $url = fopen("https://order-service-fp.herokuapp.com/api/order/id?id={$id}&user_id={$user_id}", "r");
                                 $json = stream_get_contents($url);
                                 fclose($url);
                 

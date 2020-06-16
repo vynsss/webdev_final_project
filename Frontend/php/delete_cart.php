@@ -2,12 +2,8 @@
     if(isset($_REQUEST["id"])){
 
         $id = $_REQUEST["id"];
-        
-        $data = array(
-            "id" => $id
-        );
 
-        $url = "http://localhost:8000/api/carts/remove?id={$id}";
+        $url = "https://order-service-fp.herokuapp.com/api/carts/remove?id={$id}";
         $curl = curl_init($url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 

@@ -38,7 +38,7 @@
                         <?php
                             if(isset($_COOKIE["user_id"])){
                                 $user_id = $_COOKIE["user_id"];
-                                $url = fopen("http://localhost:8000/api/carts?user_id={$user_id}", "r");
+                                $url = fopen("https://order-service-fp.herokuapp.com/api/carts?user_id={$user_id}", "r");
                                 $json = stream_get_contents($url);
                                 fclose($url);
                 
@@ -51,7 +51,7 @@
                 
                                 foreach($data->cart as $item) {
                                     //to see the data of product
-                                    $id = $item->id;
+                                    $id = $item->product_id;
                                     $url2 = "https://product-service-fp.herokuapp.com/api/product?id={$id}";
                                     $test_datas2 = fopen($url2, "r");
                                     $json_test2 = stream_get_contents($test_datas2);
@@ -80,7 +80,8 @@
                                 
                                 print '<div class="row form-group">';
                                 print '<div class="col-md-12">';
-                                print '<input type="submit" value="Check Out" class="btn btn-primary py-3 px-4">';
+                                print '<p><a href="php/order_checkout.php?id='.$order_id.'" class="btn btn-primary px-4 py-3">Check Out</a></p>';
+                                // print '<input type="submit" value="Check Out" class="btn btn-primary py-3 px-4">';
                             } else{
                                 print '<h4>It seems you were away for too long! Please login again.</h4>';
                             }

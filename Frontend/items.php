@@ -46,7 +46,7 @@
                             print '</ul>';
 
                             print '<iframe name="hiddenFrame" width="0" height="0" border="0" style="display: none;"></iframe>';
-                            print '<form action="http://localhost:8000/api/carts/create" method="POST" name="add_cart" target="hiddenFrame">';
+                            print '<form action="https://order-service-fp.herokuapp.com/api/carts/create" method="POST" name="add_cart" target="hiddenFrame">';
                                 print '<label class="font-weight-bold" for="quantity">Quantity</label>';
                                 print '<input name="quantity" id="quantity" class="input-number" type="number" value="1" min="1" max="1000">';
                                 print '<input type="hidden" name="product_id" id="product_id" value="' .$id. '">';
@@ -69,7 +69,7 @@
 
     <script>
         document.getElementById("add_button").onclick = function () {
-            location.href = "https://balibebek.live/items.php";
+            location.href = "items.php";
         };
     </script>
 

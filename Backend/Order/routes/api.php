@@ -26,6 +26,7 @@ Route::get('/statuses', 'StatusController@show');
 Route::get('/orders', 'OrderController@show');
 Route::get('/order', 'OrderController@show_available');
 Route::get('/order/id', 'OrderController@show_indiv');
+Route::put('/orders/update', 'OrderController@update_status');
 
 //carts
 Route::post('/carts/create', 'CartController@add');
@@ -39,4 +40,5 @@ Route::prefix('/admin')->group(function(){
     //status
     Route::post('/statuses/create', 'StatusController@add');
     Route::put('/statuses/update', 'StatusController@update');
+    Route::get('/orders/all', 'OrderController@show_all');
 });
