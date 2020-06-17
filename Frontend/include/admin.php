@@ -4,9 +4,9 @@
             <div class="row align-items-center justify-content-center">
                 <div class="col-md-7 text-center" data-aos="fade-up" data-aos-delay="400">
                     <h1 class="text-white">Admin</h1>
-                    <li >
+                    <!-- <li >
                         <a href="#">Login Page</a>
-                    </li>
+                    </li> -->
                     <li >
                         <a href="admin_products_page.php">Product Page</a>
                     </li>

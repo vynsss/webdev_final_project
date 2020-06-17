@@ -68,6 +68,13 @@
         </div>
     </div>
 
+    <?php
+        if($_COOKIE["user_id"] == 1){
+            print '<a href="admin_products_page.php">Admin page</a>';
+        }
+    ?>
+
+
     <div class="container">
         <div class="featured-property d-flex">
             <div class="row justify-content-center"  >
@@ -93,6 +100,7 @@
                 
                                 $data = json_decode($json);
                                 // print $data_europeana->product[0]->name;
+                                
                 
                                 foreach($data->order as $item) {
                                     print '<h2>Order : #<span style="color: #e3c4a8"><a href="php/order.php?id='.$item->id.'">' .$item->id. '</a></span> </h2>';
