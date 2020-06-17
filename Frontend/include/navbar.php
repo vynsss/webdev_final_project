@@ -102,7 +102,7 @@
                             <li>
                                 <a href="contact.php">Contact Us</a>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <div class="input-group mb-3" >
                                     <input type="text" class="form-control bg-transparent" placeholder="Search"
                                         aria-label="Search" aria-describedby="button-addon2" style="background-color: rgba(255, 255, 255, 0.2);">
@@ -110,7 +110,7 @@
                                         <button class="btn btn-primary rounded-top-right-0" type="button" id="button-addon2">Search</button>
                                     </div>
                                 </div>
-                            </li>
+                            </li> -->
                         </ul>
                     </nav>
                 </div>
