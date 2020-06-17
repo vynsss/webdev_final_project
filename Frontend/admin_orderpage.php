@@ -37,71 +37,43 @@
                         <h1 style="text-align: center">History</h1>
                         <hr>
 
-                        <h2>Order : #<span style="color: #e3c4a8"><a href="#">323</a></span> </h2>
-                        <p>Customer Name: <span>Vicky</span></p>
-                        <form action="/action_page.php">
-                            <label for="status">Status :</label>
-                            <select name="status" id="status">
-                                <option value="outofstock">Unhandled</option>
-                                <option value="available">Handled</option>
-                            </select>
-                            <br><br>
-                            <input type="submit" value="Update">
-                        </form>
-                        <hr>
-
-                        <h2>Order : #<span style="color: #e3c4a8"><a href="#">369</a></span> </h2>
-                        <p>Customer Name: <span>Vicky</span></p>
-                        <form action="/action_page.php">
-                            <label for="status">Status :</label>
-                            <select name="status" id="status">
-                                <option value="outofstock">Unhandled</option>
-                                <option value="available">Handled</option>
-                            </select>
-                            <br><br>
-                            <input type="submit" value="Update">
-                        </form>
-                        <hr>
-
-                        <h2>Order : #<span style="color: #e3c4a8"><a href="#">398</a></span> </h2>
-                        <p>Customer Name: <span>Vicky</span></p>
-                        <form action="/action_page.php">
-                            <label for="status">Status :</label>
-                            <select name="status" id="status">
-                                <option value="outofstock">Unhandled</option>
-                                <option value="available">Handled</option>
-                            </select>
-                            <br><br>
-                            <input type="submit" value="Update">
-                        </form>
-                        <hr>
-
-                        <h2>Order : #<span style="color: #e3c4a8"><a href="#">401</a></span> </h2>
-                        <p>Customer Name: <span>Vicky</span></p>
-                        <form action="/action_page.php">
-                            <label for="status">Status :</label>
-                            <select name="status" id="status">
-                                <option value="outofstock">Unhandled</option>
-                                <option value="available">Handled</option>
-                            </select>
-                            <br><br>
-                            <input type="submit" value="Update">
-                        </form>
-                        <hr>
-
-                        <h2>Order : #<span style="color: #e3c4a8"><a href="#">422</a></span> </h2>
-                        <p>Customer Name: <span>Vicky</span></p>
-                        <form action="/action_page.php">
-                            <label for="status">Status :</label>
-                            <select name="status" id="status">
-                                <option value="outofstock">Unhandled</option>
-                                <option value="available">Handled</option>
-                            </select>
-                            <br><br>
-                            <input type="submit" value="Update">
-                        </form>
-                        <hr>
-
+                        <?php 
+                            if(isset($_COOKIE["user_id"])){
+                                $user_id = $_COOKIE["user_id"];
+                                $url = fopen("https://order-service-fp.herokuapp.com/api/admin/orders/all", "r");
+                                $json = stream_get_contents($url);
+                                fclose($url);
+                
+                
+                                $data = json_decode($json);
+                                // print $data_europeana->product[0]->name;
+                                print '<form></form>';
+                
+                                foreach($data->order as $item) {
+                                    print '<h2>Order : #<span style="color: #e3c4a8"><a href="php/order.php?id='.$item->id.'">' .$item->id. '</a></span> </h2>';
+                                    print '<p>' .$item->date. '</p>';
+                                    print '<form action="php/update_status.php" method="PUT" name="add_cart">';
+                                        print '<label for="status">Status :</label>';
+                                        print '<select name="status_id" id="status" required>';
+                                            if($item->status_id == 2){
+                                                print '<option value=""></option>';
+                                                print '<option value="3">pending</option>';
+                                                print '<option value="4">delivered</option>';
+                                            } elseif($item->status_id == 3){
+                                                print '<option value=""></option>';
+                                                print '<option value="4">delivered</option>';
+                                            }
+                                            print '<input type="hidden" name="id" value="'.$item->id.'">';
+                                            
+                                        print '</select>';
+                                        print '<br><br>';
+                                        // print '<input type="submit" value="Update">';
+                                        print '<input type="submit" id="update" value="Update" class="btn btn-primary py-3 px-4">';
+                                    print '</form>';
+                                    print '<hr>';
+                                }
+                            }
+                        ?>
 
                     </form>
                 </div>

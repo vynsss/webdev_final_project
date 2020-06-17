@@ -45,7 +45,7 @@ class OrderController extends Controller
     }
 
     public function show_all(){
-        $stmt = Order::All();
+        $stmt = Order::All()->where('status_id', '!=', 1)->where('status_id', '!=', 4)->orderBy('id', 'asc');
         echo json_encode([
             'order' => $stmt
         ]);
