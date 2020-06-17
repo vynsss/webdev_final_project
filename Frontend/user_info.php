@@ -67,6 +67,7 @@
                 if($_COOKIE["user_id"] == 1){
                     print '<h1><a href="admin_products_page.php">Admin page</a><h1>';
                 }
+                print '<a href = "php/log_out.php" class="btn btn-primary py-3 px-4">Log Out</a>';
             ?>
         </div>
     </div>
