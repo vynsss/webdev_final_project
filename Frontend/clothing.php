@@ -31,34 +31,14 @@
                         print '<a href="php/product.php?id='.$item->id.'"><img src="images/'.$item->image.'" alt="Image" class="img-fluid"></a>';
                         print '<div class="p-4 bg-white">';
                         print '<span class="d-block text-secondary small text-uppercase">Rp'. $item->price .'</span>';
-                        print '<h2 class="h5 text-black mb-3"><a href="about_us.php">'. $item->name .'</a></h2>';
+                        print '<h2 class="h5 text-black mb-3"><a href="php/product.php?id='.$item->id.'">'. $item->name .'</a></h2>';
                         print '</div>';
                         print '</div>';
                     }
                 ?>	
             </div>
-
-        </div>
-
-        <div class="container mt-5" data-aos="fade-up">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <div class="site-block-27">
-                        <ul>
-                            <li><a href="#">&lt;</a></li>
-                            <li class="active"><span>1</span></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li><a href="#">&gt;</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
-
 </div>
 
 <?php
