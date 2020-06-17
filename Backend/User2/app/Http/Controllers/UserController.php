@@ -35,7 +35,7 @@ class UserController extends Controller
         $username = $request->input("username");
         $email = $request->input("email");
         $password = $request->input("password");
-        $confirm_password = $request->input("confirm_password");
+        // $confirm_password = $request->input("confirm_password");
         $address = $request->input("address");
 
         $stmt = DB::table('users')->insert([

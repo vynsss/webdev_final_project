@@ -116,7 +116,7 @@
         }
 
         document.getElementById("register_button").onclick = function () {
-            location.href = "login.php";
+            location.href = "https://balibebek.live/login.php";
         };
     </script>
 
