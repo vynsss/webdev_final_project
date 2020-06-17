@@ -30,6 +30,7 @@ Route::get('/products/pagination', 'ProductController@pagination');
 Route::get('/product', 'ProductController@show_individual');
 
 Route::prefix('/admin')->group(function(){
+    Route::get('/products', 'ProductController@show_all');
     Route::post('/products/create', 'ProductController@insert');
     Route::put('/products/update', 'ProductController@update');
 

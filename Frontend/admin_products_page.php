@@ -46,8 +46,49 @@
                         <p style="color: #fff">h</p>
 
                         <h1 style="text-align: center">Products</h1>
-                        <p style="text-align: right">Total Items: <span>1234</span></p>
+                        <!-- <p style="text-align: right">Total Items: <span>1234</span></p> -->
                         <hr>
+
+                        <?php
+                            $products = fopen("http://localhost:8000/api/admin/products", "r");
+                            $product = stream_get_contents($products);
+                            fclose($products);
+
+                            $data = json_decode($product);
+                            print '<form></form>';
+
+                            foreach($data->product as $item) {
+                                // print '<div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="100">';
+                                // print '<a href="php/product.php?id='.$item->id.'"><img src="images/'.$item->image.'" alt="Image" class="img-fluid"></a>';
+                                // print '<div class="p-4 bg-white">';
+                                // print '<span class="d-block text-secondary small text-uppercase">Rp'. $item->price .'</span>';
+                                // print '<h2 class="h5 text-black mb-3"><a href="about_us.php">'. $item->name .'</a></h2>';
+                                // print '</div>';
+                                // print '</div>';
+
+                                print '<h2 class="mb-3">'. $item->name .'</h2>';
+                                print '<form action="php/update_product.php">';
+                                    print '<p style="text-align: left">Price: <span style="text-indent: 20px"><input type="number" name="price" min="1" value="'. $item->price .'" step="any" /></span></p>';
+                                    print '<label for="status">Status : </label>';
+                                    print '<select name="status_id" id="status">';    
+                                    if($item->status_id == 1){
+                                            print '<option value="1">Available</option>';
+                                            print '<option value="2">Out Of Stock</option>';
+                                        print '</select>';
+                                    } else{
+                                            print '<option value="2">Out Of Stock</option>';
+                                            print '<option value="1">Available</option>';
+                                        print '</select>';
+                                    }
+                                    print '</select>';
+                                    print '<br><br>';
+                                    // print '<input type="submit" value="Update">';
+                                    print '<input type="hidden" name="id" value="'.$item->id.'">';
+                                    print '<input type="submit" id="update" value="Update" class="btn btn-primary py-3 px-4">';
+                                print '</form>';
+                                print '<hr>';
+                            }
+                        ?>	
 
                         <!--ini klo u mau dia bisa ke page items nya-->
                         <h2 class="mb-3"><span><a href="#">Fried Chicken</a></span></h2>
@@ -70,7 +111,6 @@
                         <h2 class="mb-3">Fried Chicken</h2>
                         <p style="text-align: left">Items Left: <span style="text-indent: 20px">43</span></p>
                         <p style="text-align: left">Price: <span style="text-indent: 20px"><input type="number" min="1" step="any" /></span></p>
-                        <!--<p style="text-align: right">Status :<span style="text-indent: 20px">3</span></p>-->
                         <form action="/action_page.php">
                             <label for="status">Status :</label>
                             <select name="status" id="status">

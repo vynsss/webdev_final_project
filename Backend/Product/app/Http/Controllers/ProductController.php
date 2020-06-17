@@ -10,6 +10,15 @@ use Illuminate\Support\Facades\Redirect;
 class ProductController extends Controller
 {
 
+    public function show_all(){
+        $product = DB::select('SELECT * FROM products');
+
+        echo json_encode(array(
+            "success" => true,
+            "product" => $product
+        ));
+    }
+
     public function show_available(){
         $product = DB::select('SELECT * FROM products WHERE status_id = 1');
 
