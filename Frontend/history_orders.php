@@ -49,7 +49,6 @@
                                 fclose($url);
                 
                                 $data = json_decode($json);
-                                // print $data_europeana->product[0]->name;
 
                                 print '<h1 style="text-align: center">Order : #<span style="color: #e3c4a8">' .$_SESSION["order"]. '</span> </h1>';
                                 print '<h3 style="text-align: right">' .$data->status. '</h3>';

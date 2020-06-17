@@ -44,7 +44,6 @@
                 
                 
                                 $data = json_decode($json);
-                                // print $data_europeana->product[0]->name;
                                 $order_id = $data->cart[0]->order_id;
                                 $status_id = $data->status;
                                 $total = 0;
@@ -66,11 +65,8 @@
                                     // <!--itu link di atas for the buttons ada js nya tpi ga ngerti-->
                                     print '<div class="input-group input-number-group">';
                                         print '<div class="input-group-button">';
-                                            // <!--<span class="input-number-decrement">-</span>-->
                                         print '</div>';
                                         print '<h4 style="text-indent: 550px">Quantity : ' .$item->quantity. '<span style="color: white">--</span></h4>';
-                                        // print '<input class="input-number" type="number" value="1" min="1" max="1000">';
-                                        // $id = $item->id;
                                         print '<a href="php/delete_cart.php?id='.$item->id.'" class="pl-0 pr-3" style="font-size: 25px;text-indent: 20px"><span class="icon-trash"></span></a>';
                                         print '</div>';
                                     print '<hr>';
@@ -81,7 +77,6 @@
                                 print '<div class="row form-group">';
                                 print '<div class="col-md-12">';
                                 print '<p><a href="php/order_checkout.php?id='.$order_id.'" class="btn btn-primary px-4 py-3">Check Out</a></p>';
-                                // print '<input type="submit" value="Check Out" class="btn btn-primary py-3 px-4">';
                             } else{
                                 print '<h4>It seems you were away for too long! Please login again.</h4>';
                             }

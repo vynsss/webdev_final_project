@@ -8,6 +8,6 @@
         $response2 = curl_exec($curl2);
         $data2 = json_decode($response2);
 
-        header('Location: index.php');
+        header('Location: ../index.php');
     }
 ?>

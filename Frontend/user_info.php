@@ -48,8 +48,6 @@
 
 
                             $data_test = json_decode($json_test);
-                            // print $data_test->first_name;
-                            // print '<hr>';
 
                             print '<p style="color: white;text-indent: 500px">lorem</p>';
                             print '<h1 class="mb-3" style="text-indent: 50px">' .$data_test->first_name. ' ' .$data_test->last_name. '</h1>';
@@ -65,14 +63,15 @@
                 </div>
 
             </div>
+            <?php
+                if($_COOKIE["user_id"] == 1){
+                    print '<h1><a href="admin_products_page.php">Admin page</a><h1>';
+                }
+            ?>
         </div>
     </div>
 
-    <?php
-        if($_COOKIE["user_id"] == 1){
-            print '<a href="admin_products_page.php">Admin page</a>';
-        }
-    ?>
+    
 
 
     <div class="container">
