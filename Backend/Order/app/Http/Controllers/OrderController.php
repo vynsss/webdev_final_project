@@ -13,7 +13,7 @@ class OrderController extends Controller
 
     public function show(Request $request){
         $user = $request->input('user_id');
-        $stmt = Order::All()->where('user_id', $user)->where('status_id', '!=', 1);
+        $stmt = Order::All()->where('user_id', $user)->where('status_id', '!=', 1)->orderBy('id', 'desc');
         echo json_encode(array(
             'success' => true,
             'order' => $stmt
