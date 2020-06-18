@@ -13,7 +13,7 @@ class OrderController extends Controller
 
     public function show(Request $request){
         $user = $request->input('user_id');
-        $stmt = Order::All()->where('user_id', $user)->where('status_id', '!=', 1)->orderBy('id', 'desc');
+        $stmt = Order::All()->where('user_id', $user)->where('status_id', '!=', 1);
         echo json_encode(array(
             'success' => true,
             'order' => $stmt
@@ -31,11 +31,11 @@ class OrderController extends Controller
 
     public function show_indiv(Request $request){
         $id = $request->input('id');
-        $user = $request->input('user_id');
+        // $user = $request->input('user_id');
         $order = Order::All()->where('id', $id)->first();
         $status = DB::table('statuses')->where('id', $order->status_id)->first();
 
-        $stmt  = Cart::All()->where('order_id', $id)->where('user_id', $user);
+        $stmt  = Cart::All()->where('order_id', $id);
         echo json_encode([
             "success" => true,
             "status"=> $status->name,
@@ -45,7 +45,7 @@ class OrderController extends Controller
     }
 
     public function show_all(){
-        $stmt = Order::All()->where('status_id', '!=', 1)->where('status_id', '!=', 4)->orderBy('id', 'asc');
+        $stmt = Order::All()->where('status_id', '!=', 1)->where('status_id', '!=', 4);
         echo json_encode([
             'order' => $stmt
         ]);

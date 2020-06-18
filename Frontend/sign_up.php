@@ -90,6 +90,7 @@
                                 <input type="submit" id="register_button" value="Sign Up" class="btn btn-primary py-3 px-4">
                             </div>
                         </div>
+                        <!-- <span id="log_in"></span> -->
 
 
                     </form>
@@ -116,7 +117,16 @@
         }
 
         document.getElementById("register_button").onclick = function () {
-            location.href = "https://balibebek.live/login.php";
+            // window.location = "login.php";
+            // document.getElementById('log_in').innerHTML = 'you are registered! please log in';
+            // alert("You are Registered. Please log in!");
+            // document.getElementById('firstname').value='';
+            // document.getElementById('lastname').value='';
+            // document.getElementById('username').value='';
+            // document.getElementById('email').value='';
+            // document.getElementById('password').value='';
+            // document.getElementById('confirm_password').value='';
+            // document.getElementById('address').value='';
         };
     </script>
 

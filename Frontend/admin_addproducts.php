@@ -100,7 +100,7 @@
 
 <script>
     document.getElementById("add").onclick = function () {
-        location.href = "https://balibebek.live/admin_addproducts.php";
+        // location.href = "https://balibebek.live/admin_addproducts.php";
     };
 </script>
 
