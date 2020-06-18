@@ -12,3 +12,4 @@ Backend   : Using Laravel framework to make the APIs<br>
 Hosting   : 
   - Web Hosting: Heroku
   - Database: AWS RDS MySQL
+  - CI: Github action workflow
