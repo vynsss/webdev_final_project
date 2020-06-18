@@ -12,3 +12,7 @@ Github action workflow for Laravel
 ### Admin
 - <a href="https://product-service-fp.herokuapp.com/api/admin/products/create">Create new product</a>
 - <a href="https://product-service-fp.herokuapp.com/api/admin/products/update">Edit the availablitity of the product and pricing</a>
+
+### List of Status
+- 1- Available
+- 2- Out of Stock
