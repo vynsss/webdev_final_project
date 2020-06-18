@@ -5,7 +5,7 @@ Github action workflow for larave;
 
 ## APIs
 ### Customer
-- <a href = "https://order-service-fp.herokuapp.com/api/orders>List out history orders made by user</a> [request user_id]
+- <a href = "https://order-service-fp.herokuapp.com/api/orders">List out history orders made by user</a> [request user_id]
 - <a href = "https://order-service-fp.herokuapp.com/api/order/id">Get the list of product ordered by an individual order</a> [request user_id]
     
 ### Admin
